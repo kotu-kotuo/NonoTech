@@ -2,17 +2,13 @@ import { GetStaticProps, NextPage } from "next";
 import Layout from "@/components/common/Layout";
 import Card from "@/components/common/Card";
 import Container from "@/components/common/parts/Container";
-import { fetchArticles } from "@/lib/notion";
-import { IndexProps, PageProps } from "types/types";
-
-// type CardProps = {
-//   cover: any;
-// };
+import { fetchPages } from "@/lib/notion";
+import { IndexProps } from "types/types";
 
 const Home: NextPage<IndexProps> = ({ pages }) => {
   console.log(pages);
   return (
-    <Layout path="/" title="NonoTech" noTitleTemplate isTopPage>
+    <Layout path="/" title="NonoTech" noTitleTemplate={true} isTopPage={true}>
       <Container>
         <div className="mt-8 mb-20 space-y-5">
           {pages.map((page, index) => (
@@ -25,7 +21,7 @@ const Home: NextPage<IndexProps> = ({ pages }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { results } = await fetchArticles({});
+  const { results } = await fetchPages({});
   return {
     props: {
       pages: results ? results : [],
