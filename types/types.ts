@@ -68,6 +68,7 @@ export type PropertyType = {
   slug: { rich_text: RichTextType[] };
   publishedAt: { date: { start: string } };
   isPublic: { checkbox: boolean };
+  category: { select: { name: string } };
   tags: { multi_select: [{ name: string }] };
 };
 
