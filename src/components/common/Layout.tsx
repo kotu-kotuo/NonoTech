@@ -1,13 +1,13 @@
-import NextHeadSeo from 'next-head-seo';
-
-import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
+import NextHeadSeo from "next-head-seo";
+import Footer from "@/components/common/Footer";
+import Header from "@/components/common/Header";
+import { LayoutProps } from "types/types";
 
 // Layout のデフォルト設定
-const APP_NAME = '株式会社UnReact';
-const APP_ROOT_URL = 'https://unreact.jp'; // 末尾に `/` をつけない
-const APP_DEFAULT_DESCRIPTION = '株式会社UnReactのメタディスクリプションです。';
-const APP_DEFAULT_OG_IMAGE_PATH = '/default-unreact.png';
+const APP_NAME = "NonoTech";
+const APP_ROOT_URL = "https://unreact.jp"; // 末尾に `/` をつけない
+const APP_DEFAULT_DESCRIPTION = "株式会社UnReactのメタディスクリプションです。";
+const APP_DEFAULT_OG_IMAGE_PATH = "/nonotech-ogp.png";
 
 /* Props について
  *  `path`           : [必須] そのページの相対パスを渡す。
@@ -19,17 +19,6 @@ const APP_DEFAULT_OG_IMAGE_PATH = '/default-unreact.png';
  *  `isTopPage`      : TOP ページで `true` を渡す。それ以外のページは省略。OG タイプの条件分岐に使用。
  *  `children`       : [必須]
  */
-
-type LayoutProps = {
-  path: string;
-  title: string;
-  description?: string;
-  ogImagePath?: string;
-  noindex?: boolean;
-  noTitleTemplate?: boolean;
-  isTopPage?: boolean;
-  children: React.ReactNode;
-};
 
 const Layout = ({
   path,
@@ -53,17 +42,17 @@ const Layout = ({
         title={noTitleTemplate ? title : `${title} - ${APP_NAME}`}
         canonical={pageUrl}
         description={description}
-        robots={noindex ? 'noindex, nofollow' : undefined}
+        robots={noindex ? "noindex, nofollow" : undefined}
         og={{
           title,
           description,
           url: pageUrl,
           image: ogImageUrl,
-          type: isTopPage ? 'website' : 'article',
+          type: isTopPage ? "website" : "article",
           siteName: APP_NAME,
         }}
         twitter={{
-          card: 'summary_large_image',
+          card: "summary_large_image",
         }}
       />
 

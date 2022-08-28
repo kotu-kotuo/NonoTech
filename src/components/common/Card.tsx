@@ -1,7 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
+import { CardProps } from "types/types";
 
-const Card = () => {
+const Card: FC<CardProps> = ({ page }) => {
+  console.log(page);
   return (
     <div className="flex gap-x-3 bg-white p-3 shadow-sm">
       <div className="min-w-[80px]">
@@ -9,7 +11,7 @@ const Card = () => {
           width={200}
           height={200}
           alt="記事の画像"
-          src="/card-image.png"
+          src={page.cover ? page.cover : "/sika.jpg"}
           objectFit="cover"
           className="static h-auto w-full"
           quality={50}
@@ -17,7 +19,7 @@ const Card = () => {
       </div>
       <div>
         <div className="mb-4 text-base font-bold text-gray-800">
-          【タイトル１】セキセイインコの名前の由来について、分かりやすく解説。背中の羽の色と関係が！？
+          {page.properties.title}
         </div>
         <div className="flex items-center justify-between">
           <div className="rounded bg-primary px-2 py-1 text-xs font-bold text-white">
