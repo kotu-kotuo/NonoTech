@@ -9,19 +9,14 @@ import { IndexProps, PageProps } from "types/types";
 //   cover: any;
 // };
 
-const Home: NextPage<any> = ({ pages }) => {
+const Home: NextPage<IndexProps> = ({ pages }) => {
   console.log(pages);
   return (
     <Layout path="/" title="NonoTech" noTitleTemplate isTopPage>
       <Container>
         <div className="mt-8 mb-20 space-y-5">
-          {pages.map((page: PageProps, index: any) => (
-            <Card
-              key={index}
-              page={page}
-              // cover={page.cover?.external?.url}
-              // title={page.title}
-            />
+          {pages.map((page, index) => (
+            <Card key={index} page={page} />
           ))}
         </div>
       </Container>
