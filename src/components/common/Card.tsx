@@ -28,7 +28,7 @@ const Card: FC<CardProps> = ({ page }) => {
             <div className="rounded bg-primary px-2 py-1 text-xs font-bold text-white">
               {page.properties.category.select.name}
             </div>
-            <div className="text-sm text-gray-400 ">
+            <div className="text-sm text-gray-400">
               {getDate(page.properties.publishedAt.date)}
             </div>
           </div>

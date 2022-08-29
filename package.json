@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@notionhq/client": "1.0.4",
+    "dayjs": "^1.11.5",
     "next": "^12.2.0",
     "next-head-seo": "^0.1.3",
     "notion-block-renderer": "^2.2.1",

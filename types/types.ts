@@ -67,6 +67,7 @@ export type PropertyType = {
   title: { title: RichTextType[] };
   slug: { rich_text: RichTextType[] };
   publishedAt: { date: { start: string } };
+  updatedAt: { last_edited_time: string };
   isPublic: { checkbox: boolean };
   category: { select: { name: string } };
   tags: { multi_select: [{ name: string }] };
