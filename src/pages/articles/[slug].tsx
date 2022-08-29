@@ -8,21 +8,30 @@ import { getCover, getText } from "utils/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
 import { FaTwitter, FaFacebook } from "react-icons/fa";
 import { SiHatenabookmark } from "react-icons/si";
+import { RiArrowDropRightLine } from "react-icons/ri";
 import Image from "next/image";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
   console.log(page);
   console.log(page.properties.updatedAt.last_edited_time);
+
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
       title={getText(page.properties.title.title)}
     >
       <div className="bg-white py-4 px-4">
-        <div className="mb-4 flex w-full items-center gap-x-1.5 text-secondary">
-          <HiHome className="" />
-          <div className="">おおお</div>
+        <div className="mb-4 flex w-full items-center gap-x-1.5 text-sm text-secondary">
+          <Link href="/">
+            <div className="flex items-center gap-x-0.5">
+              <HiHome className="" />
+              <p>Home</p>
+            </div>
+          </Link>
+          <RiArrowDropRightLine className="-mx-1.5 text-xl" />
+          <p className="">{page.properties.category.select.name}</p>
         </div>
         <h1 className="text-[1.35rem] font-bold text-gray-800">
           {getText(page.properties.title.title)}
@@ -30,7 +39,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
         <div className="my-4 flex items-center justify-between">
           <div className="flex items-center gap-x-0.5 text-gray-400">
             <HiOutlineRefresh />
-            <p>
+            <p className="text-sm">
               {dayjs(page.properties.updatedAt.last_edited_time).format(
                 "YYYY/MM/DD"
               )}
