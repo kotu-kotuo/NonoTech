@@ -46,3 +46,15 @@ body {
 .nbr-block-ul > li::marker {
   @apply text-lg text-gray-600;
 }
+
+.nbr-block-code {
+  @apply text-sm;
+}
+/* Hide only scrollbar */
+.nbr-block-code pre::-webkit-scrollbar {
+  @apply hidden !important;
+}
+.nbr-block-code .syntax-highlighter-pre {
+  @apply rounded;
+  @apply p-5 !important;
+}

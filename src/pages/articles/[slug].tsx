@@ -13,9 +13,25 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
 import Container from "@/components/common/parts/Container";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import Prism from "prismjs";
+// 表示されない
+// import nightOwl from "react-syntax-highlighter/dist/cjs/styles/prism/night-owl";
+// 表示される
+// import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+// 表示されない
+// import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
+// 表示される
+import {
+  monokaiSublime,
+  irBlack,
+  tomorrowNightBright,
+  monokai,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
   console.log(page);
+  console.log(blocks);
 
   return (
     <Layout
@@ -61,7 +77,11 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           quality={30}
         />
         <div className="my-8">
-          <NotionBlocks blocks={blocks} isCodeHighlighter={true} />
+          <NotionBlocks
+            blocks={blocks}
+            isCodeHighlighter={true}
+            syntaxHighlighterCSS={irBlack}
+          />
         </div>
       </Container>
     </Layout>
