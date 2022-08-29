@@ -12,17 +12,17 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
+import Container from "@/components/common/parts/Container";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
   console.log(page);
-  console.log(page.properties.updatedAt.last_edited_time);
 
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
       title={getText(page.properties.title.title)}
     >
-      <div className="bg-white py-4 px-4">
+      <Container className="bg-white pt-4 pb-16">
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-sm text-secondary">
           <Link href="/">
             <div className="flex items-center gap-x-0.5">
@@ -33,7 +33,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           <RiArrowDropRightLine className="-mx-1.5 text-xl" />
           <p className="">{page.properties.category.select.name}</p>
         </div>
-        <h1 className="text-[1.35rem] font-bold text-gray-800">
+        <h1 className="text-[1.35rem] font-bold text-gray-900">
           {getText(page.properties.title.title)}
         </h1>
         <div className="my-4 flex items-center justify-between">
@@ -60,8 +60,10 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           height={400}
           quality={30}
         />
-        <NotionBlocks blocks={blocks} isCodeHighlighter={true} />
-      </div>
+        <div className="my-8">
+          <NotionBlocks blocks={blocks} isCodeHighlighter={true} />
+        </div>
+      </Container>
     </Layout>
   );
 };
