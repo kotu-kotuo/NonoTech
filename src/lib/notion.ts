@@ -71,3 +71,11 @@ export const fetchBlocksByPageId = async (pageId: string) => {
   }
   return { results: data };
 };
+
+export const fetchDatabase = async () => {
+  if (!DATABASE_ID) return;
+  const response = await notion.databases.retrieve({
+    database_id: DATABASE_ID,
+  });
+  return { response: response };
+};
