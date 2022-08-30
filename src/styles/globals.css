@@ -34,7 +34,7 @@ body {
 }
 
 .nbr-caption {
-  @apply mt-1 mb-6 text-center text-sm text-gray-600;
+  @apply mt-1 mb-8 text-center text-sm text-gray-600;
 }
 
 .nbr-block-ul {

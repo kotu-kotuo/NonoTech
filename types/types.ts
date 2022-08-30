@@ -1,3 +1,4 @@
+import { GetDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import { BlockType } from "notion-block-renderer";
 import { ParsedUrlQuery } from "querystring";
 
@@ -32,7 +33,7 @@ export type ArticleProps = {
 
 export type ArticleMetaProps = CardProps;
 
-export type IndexProps = { pages: PageType[] };
+export type IndexProps = { pages: PageType[]; database: any };
 
 export type TagProps = IndexProps & { tag: string };
 
