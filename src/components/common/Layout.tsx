@@ -39,8 +39,6 @@ const Layout = ({
   // OG画像の絶対パス
   const ogImageUrl = APP_ROOT_URL + ogImagePath;
 
-  console.log(database);
-
   return (
     <>
       <NextHeadSeo
@@ -64,7 +62,11 @@ const Layout = ({
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1 bg-neutral-100">
-          <div className="mx-auto max-w-6xl bg-white px-4 md:flex md:bg-neutral-100 md:px-8">
+          <div
+            className={`mx-auto max-w-6xl px-4 md:flex  md:px-8 ${
+              path.indexOf("articles") === 1 ? "bg-white md:bg-neutral-100" : ""
+            }`} //Articlesで表示切り替え
+          >
             {/* メインコンテンツ */}
             <div className=" md:w-[72%]">{children}</div>
             {/* サイドバー */}
