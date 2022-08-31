@@ -29,6 +29,7 @@ const Layout = ({
   noTitleTemplate,
   isTopPage,
   children,
+  database,
 }: LayoutProps): JSX.Element => {
   // ページの絶対パス
   const pageUrl = APP_ROOT_URL + path;
@@ -58,7 +59,43 @@ const Layout = ({
 
       <div className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 bg-neutral-100">{children}</main>
+        <main className="flex-1 bg-neutral-100">
+          <div className="mx-auto max-w-6xl px-4 md:flex md:px-8">
+            {/* メインコンテンツ */}
+            <div className=" md:w-3/4">{children}</div>
+            {/* サイドバー */}
+            <div className="ml-10 mt-8 hidden w-1/4 min-w-[200px] space-y-10 md:block">
+              <div className="w-full rounded-b bg-white">
+                <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
+                  Category
+                </div>
+                <ul className="space-y-3 py-4 pl-5 text-lg font-bold text-gray-600">
+                  {database.response.properties.category.select.options.map(
+                    (category: any) => (
+                      <li className="cursor-pointer hover:opacity-80">
+                        {category.name}
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+              <div className="w-full rounded-b bg-white">
+                <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
+                  Tag
+                </div>
+                <ul className="flex flex-wrap p-4 text-xs font-bold text-gray-600">
+                  {database.response.properties.tags.multi_select.options.map(
+                    (tag: any) => (
+                      <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 hover:opacity-80">
+                        {tag.name}
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </main>
         <Footer />
       </div>
     </>
