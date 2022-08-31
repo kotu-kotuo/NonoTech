@@ -24,7 +24,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
       title={getText(page.properties.title.title)}
       database={database}
     >
-      <div className="my-8 rounded bg-white pt-8 pb-16 md:px-10">
+      <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-sm text-secondary">
           <Link href="/">
             <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
