@@ -48,7 +48,7 @@ body {
 }
 
 .nbr-block-code {
-  @apply text-sm;
+  @apply max-w-[674px] text-sm;
 }
 /* Hide only scrollbar */
 .nbr-block-code pre::-webkit-scrollbar {

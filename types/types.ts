@@ -1,4 +1,3 @@
-import { GetDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import { BlockType } from "notion-block-renderer";
 import { ParsedUrlQuery } from "querystring";
 
@@ -11,6 +10,7 @@ export type LayoutProps = {
   noTitleTemplate?: boolean;
   isTopPage?: boolean;
   children: React.ReactNode;
+  database?: any;
 };
 
 export type PageProps = {
@@ -27,11 +27,10 @@ export type PageProps = {
 export type CardProps = { page: PageType };
 
 export type ArticleProps = {
-  page: PageType;
+  page: PageType | any;
   blocks: BlockType[];
+  database: any;
 };
-
-export type ArticleMetaProps = CardProps;
 
 export type IndexProps = { pages: PageType[]; database: any };
 

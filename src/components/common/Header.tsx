@@ -28,7 +28,7 @@ const Header = (): JSX.Element => {
         </Link>
 
         {/* PCのナビゲーション */}
-        <nav className="hidden md:block">
+        {/* <nav className="hidden md:block">
           <ol className="font-main flex space-x-10 font-bold">
             {headerLinkList.map(({ title, link }) => (
               <li className="group cursor-pointer overflow-hidden" key={title}>
@@ -39,7 +39,7 @@ const Header = (): JSX.Element => {
               </li>
             ))}
           </ol>
-        </nav>
+        </nav> */}
 
         {/* ハンバーガーボタン */}
         <button

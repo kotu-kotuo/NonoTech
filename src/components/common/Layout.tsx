@@ -2,6 +2,8 @@ import NextHeadSeo from "next-head-seo";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import { LayoutProps } from "types/types";
+import TagBlock from "./TagBlock";
+import CategoryBlock from "./CategoryBlock";
 
 // Layout のデフォルト設定
 const APP_NAME = "NonoTech";
@@ -37,6 +39,8 @@ const Layout = ({
   // OG画像の絶対パス
   const ogImageUrl = APP_ROOT_URL + ogImagePath;
 
+  console.log(database);
+
   return (
     <>
       <NextHeadSeo
@@ -60,39 +64,13 @@ const Layout = ({
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1 bg-neutral-100">
-          <div className="mx-auto max-w-6xl px-4 md:flex md:px-8">
+          <div className="mx-auto max-w-6xl bg-white px-4 md:flex md:bg-neutral-100 md:px-8">
             {/* メインコンテンツ */}
-            <div className=" md:w-3/4">{children}</div>
+            <div className=" md:w-[72%]">{children}</div>
             {/* サイドバー */}
-            <div className="ml-10 mt-8 hidden w-1/4 min-w-[200px] space-y-10 md:block">
-              <div className="w-full rounded-b bg-white">
-                <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
-                  Category
-                </div>
-                <ul className="space-y-3 py-4 pl-5 text-lg font-bold text-gray-600">
-                  {database.response.properties.category.select.options.map(
-                    (category: any) => (
-                      <li className="cursor-pointer hover:opacity-80">
-                        {category.name}
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-              <div className="w-full rounded-b bg-white">
-                <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
-                  Tag
-                </div>
-                <ul className="flex flex-wrap p-4 text-xs font-bold text-gray-600">
-                  {database.response.properties.tags.multi_select.options.map(
-                    (tag: any) => (
-                      <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 hover:opacity-80">
-                        {tag.name}
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
+            <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-10 md:block">
+              <CategoryBlock database={database} />
+              <TagBlock database={database} />
             </div>
           </div>
         </main>

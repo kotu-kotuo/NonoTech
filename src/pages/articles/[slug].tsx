@@ -1,5 +1,5 @@
 import Layout from "@/components/common/Layout";
-import { fetchPages, fetchBlocksByPageId } from "@/lib/notion";
+import { fetchPages, fetchBlocksByPageId, fetchDatabase } from "@/lib/notion";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import NotionBlocks from "notion-block-renderer";
 import React from "react";
@@ -12,10 +12,9 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
-import Container from "@/components/common/parts/Container";
 import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
+const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
   console.log(page);
   console.log(blocks);
 
@@ -23,17 +22,20 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
       title={getText(page.properties.title.title)}
+      database={database}
     >
-      <Container className="bg-white pt-4 pb-16">
+      <div className="my-8 rounded bg-white pt-8 pb-16 md:px-10">
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-sm text-secondary">
           <Link href="/">
-            <div className="flex items-center gap-x-0.5">
-              <HiHome className="" />
+            <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
+              <HiHome />
               <p>Home</p>
             </div>
           </Link>
           <RiArrowDropRightLine className="-mx-1.5 text-xl" />
-          <p className="">{page.properties.category.select.name}</p>
+          <p className="cursor-pointer hover:opacity-80">
+            {page.properties.category.select.name}
+          </p>
         </div>
         <h1 className="text-[1.35rem] font-bold text-gray-900">
           {getText(page.properties.title.title)}
@@ -48,9 +50,9 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
             </p>
           </div>
           <div className="flex items-center gap-x-2 text-2xl">
-            <FaTwitter className="rounded-full bg-[#00acee] p-[4.5px] text-white" />
-            <FaFacebook className="text-[#3B5998]" />
-            <SiHatenabookmark className="rounded-full text-[#00A4DE]" />
+            <FaTwitter className="cursor-pointer rounded-full bg-[#00acee] p-[4.5px] text-white hover:opacity-80" />
+            <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
+            <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
           </div>
         </div>
         <Image
@@ -69,7 +71,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
             syntaxHighlighterCSS={irBlack}
           />
         </div>
-      </Container>
+      </div>
     </Layout>
   );
 };
@@ -77,7 +79,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const { results } = await fetchPages({});
   const ids = results.map(
-    (result) => `/articles/${getText(result.properties.slug.rich_text)}`
+    (result: any) => `/articles/${getText(result.properties.slug.rich_text)}`
   );
   return {
     paths: ids,
@@ -96,10 +98,12 @@ export const getStaticProps: GetStaticProps<
   const page = results[0];
   const pageId = page.id;
   const { results: blocks } = await fetchBlocksByPageId(pageId);
+  const database = await fetchDatabase();
   return {
     props: {
       page: page,
       blocks: blocks,
+      database: database,
     },
   };
 };

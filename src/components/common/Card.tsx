@@ -5,10 +5,9 @@ import { CardProps } from "types/types";
 import { getCover, getDate, getText } from "utils/propaty";
 
 const Card: FC<CardProps> = ({ page }) => {
-  console.log(page);
   return (
     <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
-      <div className="flex gap-x-3 bg-white p-3 shadow-sm">
+      <div className="flex gap-x-3 bg-white p-3 shadow-sm cursor-pointer hover:opacity-80">
         <div className="min-w-[80px] max-w-[88px]">
           <Image
             width={200}
@@ -21,7 +20,7 @@ const Card: FC<CardProps> = ({ page }) => {
           />
         </div>
         <div className="w-full">
-          <div className="mb-4 text-base font-bold text-gray-800">
+          <div className="mb-4 text-base font-bold text-gray-800 md:text-lg">
             {getText(page.properties.title.title)}
           </div>
           <div className="flex items-center justify-between">
