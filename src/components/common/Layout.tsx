@@ -69,8 +69,14 @@ const Layout = ({
           >
             {/* メインコンテンツ */}
             <div className=" md:w-[72%]">{children}</div>
-            {/* サイドバー */}
+            {/* サイドバー（PC） */}
             <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-10 md:block">
+              <CategoryBlock database={database} />
+              <TagBlock database={database} />
+            </div>
+          </div>
+          <div className="md:hidden">
+            <div className="mx-4 my-8 space-y-4">
               <CategoryBlock database={database} />
               <TagBlock database={database} />
             </div>

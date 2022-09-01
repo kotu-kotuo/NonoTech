@@ -42,8 +42,8 @@ const Header = (): JSX.Element => {
         </nav> */}
 
         {/* ハンバーガーボタン */}
-        <button
-          className="relative z-50 block h-12 w-12 md:hidden"
+        <div
+          className="relative z-50 block h-12 w-12 cursor-pointer hover:opacity-80 md:hidden"
           onClick={handleMenuClick}
         >
           <span
@@ -60,19 +60,23 @@ const Header = (): JSX.Element => {
                 : "top-7 left-3 w-1/3"
             }`}
           />
-        </button>
+        </div>
 
         {/* ドロワーメニュー表示時の背景オーバーレイ */}
         <div
           className={`fixed top-0 left-0 transition-opacity duration-300 md:hidden
-            ${isOpen ? "bg-gray-900 z-10 h-screen w-full opacity-25" : "opacity-0"}
+            ${
+              isOpen
+                ? "z-10 h-screen w-full bg-gray-900 opacity-25"
+                : "opacity-0"
+            }
           `}
           onClick={handleMenuClick}
         />
 
         {/* ドロワーメニュー */}
         <nav
-          className={`bg-white fixed top-0 right-0 z-20 h-screen w-4/5 px-6 pt-28 duration-300 md:hidden ${
+          className={`fixed top-0 right-0 z-20 h-screen w-4/5 bg-white px-6 pt-28 duration-300 md:hidden ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
