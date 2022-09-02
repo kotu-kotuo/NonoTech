@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import NotionBlocks from "notion-block-renderer";
 import React from "react";
 import { ArticleProps } from "types/types";
-import { getCover, getText } from "utils/propaty";
+import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
 import { FaTwitter, FaFacebook } from "react-icons/fa";
 import { SiHatenabookmark } from "react-icons/si";

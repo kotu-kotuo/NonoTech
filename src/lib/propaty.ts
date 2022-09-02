@@ -1,4 +1,4 @@
-import { PageType, RichTextType } from "../types/types";
+import { PageType, RichTextType } from "../../types/types";
 
 export const getText = (richTextArr: RichTextType[]) => {
   try {
