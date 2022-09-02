@@ -6,7 +6,7 @@ const TagBlock = ({ database }: any) => {
       <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
         Tag
       </div>
-      <ul className="flex flex-wrap p-4 text-xs font-bold text-gray-600">
+      <ul className="flex flex-wrap px-3.5 pt-5 pb-1 text-xs font-bold text-gray-600">
         {database.response?.properties.tags.multi_select.options.map(
           (tag: any) => (
             <li

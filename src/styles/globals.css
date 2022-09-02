@@ -18,7 +18,7 @@ body {
 ===============================================*/
 
 .nbr-block-h1 > h1 {
-  @apply mt-14 mb-6 border-b border-secondary pb-2 text-2xl font-bold leading-tight;
+  @apply mt-14 mb-6 border-b-[1.5px] border-secondary pb-2 text-2xl font-bold leading-tight;
 }
 
 .nbr-block-h2 > h2 {

@@ -20,7 +20,7 @@ const Footer = (): JSX.Element => {
             <a className="mb-4 text-2xl font-bold text-white">NonoTech</a>
           </Link>
 
-          {/* ナビゲーション */}
+          {/* ナビゲーション. */}
           <nav>
             <ol>
               {footerLinkList.map(({ title, link }) => (
