@@ -3,12 +3,11 @@ import Link from "next/link";
 
 import Container from "@/components/common/parts/Container";
 
-const footerLinkList = [
-  { title: "ホーム", link: "/" },
-  { title: "このサイトについて", link: "/" },
-  { title: "お問い合わせ", link: "/" },
-  { title: "プライバシーポリシー", link: "/" },
-];
+// const footerLinkList = [
+//   { title: "ホーム", link: "/" },
+//   { title: "お問い合わせ", link: "/" },
+//   { title: "プライバシーポリシー", link: "/" },
+// ];
 
 const Footer = (): JSX.Element => {
   return (
@@ -23,15 +22,28 @@ const Footer = (): JSX.Element => {
           {/* ナビゲーション. */}
           <nav>
             <ol>
-              {footerLinkList.map(({ title, link }) => (
-                <li key={title}>
-                  <Link href={link}>
-                    <a className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base">
-                      {title}
-                    </a>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/">
+                  <a className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base">
+                    ホーム
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a
+                  className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base"
+                  href="https://forms.gle/XXr7d3Cy6jJrY9g57"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  お問い合わせ
+                </a>
+                <Link href="/">
+                  <a className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base">
+                    プライバシーポリシー
+                  </a>
+                </Link>
+              </li>
             </ol>
           </nav>
         </div>
