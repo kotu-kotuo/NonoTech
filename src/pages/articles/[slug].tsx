@@ -25,6 +25,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
       database={database}
     >
       <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
+        {/* パンくずリスト */}
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-sm text-secondary">
           <Link href="/">
             <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
@@ -37,6 +38,8 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
             {page.properties.category.select.name}
           </p>
         </div>
+
+        {/* タイトル 日付 シェアボタン アイキャッチ */}
         <h1 className="text-[1.35rem] font-bold text-gray-900">
           {getText(page.properties.title.title)}
         </h1>
@@ -64,6 +67,8 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
           height={400}
           quality={30}
         />
+
+        {/* 本文 */}
         <div className="my-8">
           <NotionBlocks
             blocks={blocks}
