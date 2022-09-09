@@ -53,7 +53,15 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
             </p>
           </div>
           <div className="flex items-center gap-x-2 text-2xl">
-            <FaTwitter className="cursor-pointer rounded-full bg-[#00acee] p-[4.5px] text-white hover:opacity-80" />
+            <a
+              href={`http://twitter.com/share?url=https://nonotech.day/articles/${getText(
+                page.properties.slug.rich_text
+              )}&hashtags=NonoTech`}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <FaTwitter className="cursor-pointer rounded-full bg-[#00acee] p-[4.5px] text-white hover:opacity-80" />
+            </a>
             <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
             <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
           </div>

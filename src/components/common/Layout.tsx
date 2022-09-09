@@ -9,7 +9,7 @@ import CategoryBlock from "./CategoryBlock";
 const APP_NAME = "NonoTech";
 const APP_ROOT_URL = "https://nonotech.day"; // 末尾に `/` をつけない
 const APP_DEFAULT_DESCRIPTION =
-  "What I have accumulated will be a creativity, and it will be a way of life!";
+  "What you have accumulated will be a creativity, and it will be a way of life!";
 const APP_DEFAULT_OG_IMAGE_PATH = "/nonotech-ogp.png";
 
 /* Props について
