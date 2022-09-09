@@ -16,13 +16,14 @@ import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
   console.log(page);
-  console.log(blocks);
+  console.log(getCover(page.cover));
 
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
       title={getText(page.properties.title.title)}
       database={database}
+      ogImage={getCover(page.cover)}
     >
       <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
         {/* パンくずリスト */}

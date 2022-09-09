@@ -10,7 +10,7 @@ const APP_NAME = "NonoTech";
 const APP_ROOT_URL = "https://nonotech.day"; // 末尾に `/` をつけない
 const APP_DEFAULT_DESCRIPTION =
   "What you have accumulated will be a creativity, and it will be a way of life!";
-const APP_DEFAULT_OG_IMAGE_PATH = "/nonotech-ogp.png";
+const APP_DEFAULT_OG_IMAGE = "/nonotech-ogp.png";
 
 /* Props について
  *  `path`           : [必須] そのページの相対パスを渡す。
@@ -27,18 +27,16 @@ const Layout = ({
   path,
   title,
   description = APP_DEFAULT_DESCRIPTION,
-  ogImagePath = APP_DEFAULT_OG_IMAGE_PATH,
+  ogImage = APP_DEFAULT_OG_IMAGE,
   noindex,
   noTitleTemplate,
   isTopPage,
   children,
   database,
 }: LayoutProps): JSX.Element => {
+
   // ページの絶対パス
   const pageUrl = APP_ROOT_URL + path;
-
-  // OG画像の絶対パス
-  const ogImageUrl = APP_ROOT_URL + ogImagePath;
 
   return (
     <>
@@ -51,7 +49,7 @@ const Layout = ({
           title,
           description,
           url: pageUrl,
-          image: ogImageUrl,
+          image: ogImage,
           type: isTopPage ? "website" : "article",
           siteName: APP_NAME,
         }}

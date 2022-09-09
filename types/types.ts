@@ -5,7 +5,7 @@ export type LayoutProps = {
   path: string;
   title: string;
   description?: string;
-  ogImagePath?: string;
+  ogImage?: string;
   noindex?: boolean;
   noTitleTemplate?: boolean;
   isTopPage?: boolean;
