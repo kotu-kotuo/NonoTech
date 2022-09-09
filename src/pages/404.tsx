@@ -8,7 +8,7 @@ import React from "react";
 const NotFound = (props: any) => {
   return (
     <Layout path="" title="404 Not Found" database={props.database}>
-      <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10 ">
+      <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
         <h1 className="mb-6 text-[1.35rem] font-bold text-gray-900">
           お探しのページは見つかりませんでした
         </h1>

@@ -7,8 +7,9 @@ import CategoryBlock from "./CategoryBlock";
 
 // Layout のデフォルト設定
 const APP_NAME = "NonoTech";
-const APP_ROOT_URL = "https://unreact.jp"; // 末尾に `/` をつけない
-const APP_DEFAULT_DESCRIPTION = "株式会社UnReactのメタディスクリプションです。";
+const APP_ROOT_URL = "https://nonotech.day"; // 末尾に `/` をつけない
+const APP_DEFAULT_DESCRIPTION =
+  "What I have accumulated will be a creativity, and it will be a way of life!";
 const APP_DEFAULT_OG_IMAGE_PATH = "/nonotech-ogp.png";
 
 /* Props について
