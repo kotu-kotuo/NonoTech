@@ -31,8 +31,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       pages: results ? results : [],
       database: database,
-      revalidate: 100,
     },
+    revalidate: 100,
   };
 };
 

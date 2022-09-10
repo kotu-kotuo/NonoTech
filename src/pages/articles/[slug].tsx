@@ -151,6 +151,7 @@ export const getStaticProps: GetStaticProps<
       blocks: blocks,
       database: database,
     },
+    revalidate: 100,
   };
 };
 
