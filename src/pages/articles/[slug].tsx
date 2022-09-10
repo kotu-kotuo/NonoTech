@@ -16,7 +16,16 @@ import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
   console.log(page);
-  console.log(getCover(page.cover));
+  console.log(blocks);
+
+  const metaDescription = blocks
+    .map((block) => {
+      if (block.type === "paragraph") {
+        return getText(block.paragraph.rich_text);
+      }
+    })
+    .join("")
+    .substring(0, 100);
 
   return (
     <Layout
@@ -24,6 +33,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
       title={getText(page.properties.title.title)}
       database={database}
       ogImage={getCover(page.cover)}
+      description={metaDescription}
     >
       <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
         {/* パンくずリスト */}
