@@ -16,7 +16,7 @@ const APP_DEFAULT_OG_IMAGE = "/nonotech-ogp.png";
  *  `path`           : [必須] そのページの相対パスを渡す。
  *  `title`          : [必須] そのページのタイトルを渡す。
  *  `description`    : そのページのメタディスクリプションを渡す。省略した場合、`APP_DEFAULT_DESCRIPTION` が使用される。
- *  `ogImagePath`    : そのページのOGP画像のパスを渡す。省略した場合、`APP_DEFAULT_OG_IMAGE_PATH` が使用される。
+ *  `ogImage`    : そのページのOGP画像のurlを渡す。省略した場合、`APP_DEFAULT_OG_IMAGE` が使用される。
  *  `noindex`        : そのページを noindex する場合は `true` を渡す。
  *  `noTitleTemplate`: TOP ページで `true` を渡す。それ以外のページは基本省略。タイトルの後ろに `- サイトのタイトル` をつけるかどうか条件分岐に使用。
  *  `isTopPage`      : TOP ページで `true` を渡す。それ以外のページは省略。OG タイプの条件分岐に使用。
@@ -34,7 +34,6 @@ const Layout = ({
   children,
   database,
 }: LayoutProps): JSX.Element => {
-
   // ページの絶対パス
   const pageUrl = APP_ROOT_URL + path;
 

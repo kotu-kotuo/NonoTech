@@ -40,11 +40,13 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
           </p>
         </div>
 
-        {/* タイトル 日付 シェアボタン アイキャッチ */}
+        {/* タイトル */}
         <h1 className="text-[1.35rem] font-bold text-gray-900">
           {getText(page.properties.title.title)}
         </h1>
+
         <div className="my-4 flex items-center justify-between">
+          {/* 日付 */}
           <div className="flex items-center gap-x-0.5 text-gray-400">
             <HiOutlineRefresh />
             <p className="text-sm">
@@ -53,6 +55,8 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
               )}
             </p>
           </div>
+
+          {/* シェアボタン */}
           <div className="flex items-center gap-x-2 text-2xl">
             <a
               href={`http://twitter.com/share?url=https://nonotech.day/articles/${getText(
@@ -63,10 +67,28 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
             >
               <FaTwitter className="cursor-pointer rounded-full bg-[#00acee] p-[4.5px] text-white hover:opacity-80" />
             </a>
-            <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
-            <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
+            <a
+              href={`http://www.facebook.com/share.php?u=https://nonotech.day/articles/${getText(
+                page.properties.slug.rich_text
+              )}`}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
+            </a>
+            <a
+              href={`http://b.hatena.ne.jp/entry/s/nonotech.day/articles/${getText(
+                page.properties.slug.rich_text
+              )}`}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
+            </a>
           </div>
         </div>
+
+        {/* アイキャッチ */}
         <Image
           className="static h-auto w-full"
           src={getCover(page.cover)}
