@@ -12,7 +12,7 @@ const NotFound = (props: any) => {
         <h1 className="mb-6 text-[1.35rem] font-bold text-gray-900">
           お探しのページは見つかりませんでした
         </h1>
-        <Image src="/NonoTech-404.png" width={700} height={400} quality={100} />
+        <Image src="/nonotech-404.png" width={700} height={400} quality={100} />
         <Link href={"/"}>
           <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-normal text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
             ホームへ戻る

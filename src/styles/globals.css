@@ -33,6 +33,10 @@ body {
   @apply mb-8 text-base leading-relaxed text-gray-900;
 }
 
+.nbr-link {
+  @apply break-words;
+}
+
 .nbr-caption {
   @apply mt-1 mb-8 text-center text-sm text-gray-600;
 }
