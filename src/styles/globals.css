@@ -34,7 +34,7 @@ body {
 }
 
 .nbr-link {
-  @apply break-words;
+  @apply cursor-pointer break-words border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary;
 }
 
 .nbr-caption {

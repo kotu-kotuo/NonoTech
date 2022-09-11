@@ -13,6 +13,9 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import TwitterButton from "@/components/common/parts/TwitterButton";
+import FacebookButton from "@/components/common/parts/FacebookButton";
+import HatenaButton from "@/components/common/parts/HatenaButton";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
   console.log(page);
@@ -68,33 +71,9 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
 
           {/* シェアボタン */}
           <div className="flex items-center gap-x-2 text-2xl">
-            <a
-              href={`http://twitter.com/share?url=https://nonotech.day/articles/${getText(
-                page.properties.slug.rich_text
-              )}&hashtags=NonoTech`}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <FaTwitter className="cursor-pointer rounded-full bg-[#00acee] p-[4.5px] text-white hover:opacity-80" />
-            </a>
-            <a
-              href={`http://www.facebook.com/share.php?u=https://nonotech.day/articles/${getText(
-                page.properties.slug.rich_text
-              )}`}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
-            </a>
-            <a
-              href={`http://b.hatena.ne.jp/entry/s/nonotech.day/articles/${getText(
-                page.properties.slug.rich_text
-              )}`}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
-            </a>
+            <TwitterButton page={page} padding="4.5px" />
+            <FacebookButton page={page} />
+            <HatenaButton page={page} />
           </div>
         </div>
 
