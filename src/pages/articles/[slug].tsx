@@ -6,8 +6,6 @@ import React from "react";
 import { ArticleProps } from "types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
-import { FaTwitter, FaFacebook } from "react-icons/fa";
-import { SiHatenabookmark } from "react-icons/si";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import Image from "next/image";
 import dayjs from "dayjs";
@@ -71,7 +69,7 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
 
           {/* シェアボタン */}
           <div className="flex items-center gap-x-2 text-2xl">
-            <TwitterButton page={page} padding="4.5px" />
+            <TwitterButton page={page} padding="p-[4.5px]" />
             <FacebookButton page={page} />
             <HatenaButton page={page} />
           </div>
@@ -96,6 +94,15 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
             syntaxHighlighterCSS={irBlack}
           />
         </div>
+
+        {/* シェアボタン */}
+        {/* <div className="mx-auto"> */}
+        <div className="mt-14 flex items-center justify-center gap-x-6 text-4xl">
+          <TwitterButton page={page} padding="p-[6px]" />
+          <FacebookButton page={page} />
+          <HatenaButton page={page} />
+        </div>
+        {/* </div> */}
       </div>
     </Layout>
   );

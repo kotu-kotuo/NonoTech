@@ -18,7 +18,7 @@ const TwitterButton = (props: TwitterButton) => {
       rel="nofollow noopener noreferrer"
     >
       <FaTwitter
-        className={`cursor-pointer rounded-full bg-[#00acee] p-[${props.padding}] text-white hover:opacity-80`}
+        className={`cursor-pointer rounded-full bg-[#00acee] ${props.padding} text-white hover:opacity-80`}
       />
     </a>
   );
