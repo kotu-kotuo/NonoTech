@@ -11,6 +11,7 @@ const HatenaButton = (props: { page: PageType }) => {
       )}`}
       target="_blank"
       rel="nofollow noopener noreferrer"
+      area-label="hatena share button"
     >
       <SiHatenabookmark className="cursor-pointer rounded-full text-[#00A4DE] hover:opacity-80" />
     </a>
