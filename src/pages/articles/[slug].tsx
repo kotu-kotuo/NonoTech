@@ -96,13 +96,34 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
         </div>
 
         {/* シェアボタン */}
-        {/* <div className="mx-auto"> */}
-        <div className="mt-14 flex items-center justify-center gap-x-6 text-4xl">
-          <TwitterButton page={page} padding="p-[6px]" />
-          <FacebookButton page={page} />
-          <HatenaButton page={page} />
+        <div className="my-16">
+          <p className="text-center text-xl font-bold text-gray-800">SHARE</p>
+          <div className="mt-4 flex items-center justify-center gap-x-6 text-4xl">
+            <TwitterButton page={page} padding="p-[6px]" />
+            <FacebookButton page={page} />
+            <HatenaButton page={page} />
+          </div>
         </div>
-        {/* </div> */}
+
+        {/* 記事下のカテゴリー、タグ */}
+        <p className="mt-4 font-bold text-gray-800">
+          CATEGORY :{" "}
+          <span className="cursor-pointer text-gray-400 hover:opacity-80">
+            {page.properties.category.select.name}
+          </span>
+        </p>
+        <div className="mt-4 flex">
+          <p className="font-bold text-gray-800">TAG : </p>
+          <ul className="mt-[0.1rem] ml-1 flex flex-wrap">
+            {page.properties.tags.multi_select.map(
+              (tag: { color: string; id: string; name: string }) => (
+                <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80">
+                  {tag.name}
+                </li>
+              )
+            )}
+          </ul>
+        </div>
       </div>
     </Layout>
   );

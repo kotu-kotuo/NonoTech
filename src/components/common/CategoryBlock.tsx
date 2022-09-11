@@ -1,7 +1,6 @@
 import React from "react";
 
 const CategoryBlock = ({ database }: any) => {
-  console.log(database);
   return (
     <div className="w-full rounded-b bg-white">
       <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">
