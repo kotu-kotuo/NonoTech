@@ -62,8 +62,10 @@ const Layout = ({
         <main className="flex-1 bg-neutral-100">
           <div
             className={`mx-auto max-w-6xl px-4 md:flex  md:px-8 ${
-              path.indexOf("articles") === 1 ? "bg-white md:bg-neutral-100" : ""
-            }`} //Articlesで表示切り替え
+              path.indexOf("articles") === 1 || path.indexOf("terms") === 1
+                ? "bg-white md:bg-neutral-100"
+                : ""
+            }`} //Articles, Termsで表示切り替え
           >
             {/* メインコンテンツ */}
             <div className=" md:w-[72%]">{children}</div>
