@@ -20,7 +20,7 @@ const Card: FC<CardProps> = ({ page }) => {
             }
             objectFit="cover"
             className="static h-auto w-full"
-            quality={50}
+            quality={30}
           />
         </div>
         <div className="w-full">
