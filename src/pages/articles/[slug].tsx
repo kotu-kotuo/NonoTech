@@ -1,8 +1,13 @@
 import Layout from "@/components/common/Layout";
 import { fetchPages, fetchBlocksByPageId, fetchDatabase } from "@/lib/notion";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from "next";
 import NotionBlocks from "notion-block-renderer";
-import React from "react";
+import React, { Key } from "react";
 import { ArticleProps } from "types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
@@ -116,8 +121,14 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
           <p className="font-bold text-gray-800">TAG : </p>
           <ul className="mt-[0.1rem] ml-1 flex flex-wrap">
             {page.properties.tags.multi_select.map(
-              (tag: { color: string; id: string; name: string }) => (
-                <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80">
+              (
+                tag: { color: string; id: string; name: string },
+                index: Key
+              ) => (
+                <li
+                  className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80"
+                  key={index}
+                >
                   {tag.name}
                 </li>
               )
@@ -129,18 +140,41 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const { results } = await fetchPages({});
-  const ids = results.map(
-    (result: any) => `/articles/${getText(result.properties.slug.rich_text)}`
-  );
-  return {
-    paths: ids,
-    fallback: false,
-  };
-};
+// export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+//   const { results } = await fetchPages({});
+//   const ids = results.map(
+//     (result: any) => `/articles/${getText(result.properties.slug.rich_text)}`
+//   );
+//   return {
+//     paths: ids,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps: GetStaticProps<
+// export const getStaticProps: GetStaticProps<
+//   ArticleProps,
+//   { slug: string }
+// > = async (ctx) => {
+//   if (!ctx.params) {
+//     return { notFound: true };
+//   }
+//   const { results } = await fetchPages({ slug: ctx.params.slug });
+//   const page = results[0];
+//   const pageId = page.id;
+//   const { results: blocks } = await fetchBlocksByPageId(pageId);
+//   const database = await fetchDatabase();
+//   return {
+//     props: {
+//       page: page,
+//       blocks: blocks,
+//       database: database,
+//     },
+//     revalidate: 100,
+//   };
+// };
+
+// --- image expired対策でSSRに変更
+export const getServerSideProps: GetServerSideProps<
   ArticleProps,
   { slug: string }
 > = async (ctx) => {
@@ -158,7 +192,6 @@ export const getStaticProps: GetStaticProps<
       blocks: blocks,
       database: database,
     },
-    revalidate: 100,
   };
 };
 
