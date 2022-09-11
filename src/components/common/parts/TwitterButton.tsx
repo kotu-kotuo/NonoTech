@@ -16,6 +16,7 @@ const TwitterButton = (props: TwitterButton) => {
       )}&hashtags=NonoTech`}
       target="_blank"
       rel="nofollow noopener noreferrer"
+      area-label="twitter share button"
     >
       <FaTwitter
         className={`cursor-pointer rounded-full bg-[#00acee] ${props.padding} text-white hover:opacity-80`}
