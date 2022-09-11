@@ -12,6 +12,7 @@ const FacebookButton = (props: { page: PageType }) => {
       target="_blank"
       rel="nofollow noopener noreferrer"
       area-label="facebook share button"
+      title="facebook share link"
     >
       <FaFacebook className="cursor-pointer text-[#3B5998] hover:opacity-80" />
     </a>
