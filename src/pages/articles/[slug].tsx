@@ -21,8 +21,8 @@ import FacebookButton from "@/components/common/parts/FacebookButton";
 import HatenaButton from "@/components/common/parts/HatenaButton";
 
 const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
-  console.log(page);
-  console.log(blocks);
+  // console.log(page);
+  // console.log(blocks);
 
   const metaDescription = blocks
     .map((block) => {

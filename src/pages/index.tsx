@@ -5,8 +5,8 @@ import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { IndexProps } from "types/types";
 
 const Home: NextPage<IndexProps> = ({ pages, database }) => {
-  console.log(pages);
-  console.log(database);
+  // console.log(pages);
+  // console.log(database);
   return (
     <Layout
       path="/"

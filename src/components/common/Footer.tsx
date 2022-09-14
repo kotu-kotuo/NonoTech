@@ -3,12 +3,6 @@ import Link from "next/link";
 
 import Container from "@/components/common/parts/Container";
 
-// const footerLinkList = [
-//   { title: "ホーム", link: "/" },
-//   { title: "お問い合わせ", link: "/" },
-//   { title: "プライバシーポリシー", link: "/" },
-// ];
-
 const Footer = (): JSX.Element => {
   return (
     <footer className="bg-primary py-10">
