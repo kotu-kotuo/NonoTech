@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import Layout from "@/components/common/Layout";
 import Card from "@/components/common/Card";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
@@ -24,7 +24,7 @@ const Home: NextPage<IndexProps> = ({ pages, database }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { results } = await fetchPages({});
   const database = await fetchDatabase();
   return {
@@ -32,8 +32,19 @@ export const getStaticProps: GetStaticProps = async () => {
       pages: results ? results : [],
       database: database,
     },
-    revalidate: 100,
   };
 };
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const { results } = await fetchPages({});
+//   const database = await fetchDatabase();
+//   return {
+//     props: {
+//       pages: results ? results : [],
+//       database: database,
+//     },
+//     revalidate: 100,
+//   };
+// };
 
 export default Home;
