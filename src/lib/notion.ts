@@ -5,9 +5,11 @@ const DATABASE_ID = process.env.NOTION_DATABASE_ID as string;
 
 export const fetchPages = async ({
   slug,
+  category,
   tag,
 }: {
   slug?: string;
+  category?: string;
   tag?: string;
 }) => {
   const and: any = [
@@ -30,6 +32,15 @@ export const fetchPages = async ({
       property: "slug",
       rich_text: {
         equals: slug,
+      },
+    });
+  }
+
+  if (category) {
+    and.push({
+      property: "category",
+      select: {
+        equals: category,
       },
     });
   }

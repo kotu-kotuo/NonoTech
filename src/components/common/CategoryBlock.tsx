@@ -1,3 +1,5 @@
+import { getText } from "@/lib/propaty";
+import Link from "next/link";
 import React from "react";
 
 const CategoryBlock = ({ database }: any) => {
@@ -8,9 +10,9 @@ const CategoryBlock = ({ database }: any) => {
       </div>
       <ul className="space-y-3 py-4 pl-5 text-lg font-bold text-gray-600">
         {database.response?.properties.category.select.options.map(
-          (category: any) => (
+          (category: { id: string; name: string }) => (
             <li className="cursor-pointer hover:opacity-80" key={category.id}>
-              {category.name}
+              <Link href={`/category/${category.name}`}>{category.name}</Link>
             </li>
           )
         )}

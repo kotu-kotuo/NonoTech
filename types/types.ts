@@ -34,12 +34,15 @@ export type ArticleProps = {
 
 export type IndexProps = { pages: PageType[]; database: any };
 
+export type CategoryProps = IndexProps & { category: string };
+
 export type TagProps = IndexProps & { tag: string };
 
 export type BlockProps = { block: BlockType };
 
 export type Params = ParsedUrlQuery & {
   slug?: string;
+  category?: string;
   tag?: string;
 };
 

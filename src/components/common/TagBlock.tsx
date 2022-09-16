@@ -8,7 +8,7 @@ const TagBlock = ({ database }: any) => {
       </div>
       <ul className="flex flex-wrap px-3.5 pt-5 pb-1 text-xs font-bold text-gray-600">
         {database.response?.properties.tags.multi_select.options.map(
-          (tag: any) => (
+          (tag: { id: string; name: string }) => (
             <li
               className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 hover:opacity-80"
               key={tag.id}
