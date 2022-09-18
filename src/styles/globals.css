@@ -22,7 +22,7 @@ body {
 }
 
 .nbr-block-h2 > h2 {
-  @apply mt-12 mb-5 border-l-4 border-primary pl-1.5 text-[22px] font-bold leading-relaxed md:mb-7;
+  @apply mt-12 mb-7 border-l-4 border-primary pl-1.5 text-[22px] font-bold leading-relaxed;
 }
 
 .nbr-block-h3 > h3 {

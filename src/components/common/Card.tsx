@@ -24,7 +24,7 @@ const Card: FC<CardProps> = ({ page }) => {
           />
         </div>
         <div className="w-full">
-          <div className="mb-4 text-base font-bold text-gray-800 md:text-lg">
+          <div className="mb-4 text-base font-bold text-gray-900 md:text-lg">
             {getText(page.properties.title.title)}
           </div>
           <div className="flex items-center justify-between">
