@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const TagBlock = ({ database }: any) => {
@@ -13,7 +14,7 @@ const TagBlock = ({ database }: any) => {
               className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 hover:opacity-80"
               key={tag.id}
             >
-              {tag.name}
+              <Link href={`/tag/${tag.name}`}>{tag.name}</Link>
             </li>
           )
         )}
