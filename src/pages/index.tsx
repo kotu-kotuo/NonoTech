@@ -24,6 +24,7 @@ const Home: NextPage<IndexProps> = ({ pages, database }) => {
   );
 };
 
+// --- image expired対策でSSRに変更
 export const getServerSideProps: GetServerSideProps = async () => {
   const { results } = await fetchPages({});
   const database = await fetchDatabase();

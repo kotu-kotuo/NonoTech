@@ -113,9 +113,11 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
         {/* 記事下のカテゴリー、タグ */}
         <p className="mt-4 font-bold text-gray-800">
           CATEGORY :{" "}
-          <span className="cursor-pointer text-gray-400 hover:opacity-80">
-            {page.properties.category.select.name}
-          </span>
+          <Link href={`/category/${page.properties.category.select.name}`}>
+            <span className="cursor-pointer text-gray-400 hover:opacity-80">
+              {page.properties.category.select.name}
+            </span>
+          </Link>
         </p>
         <div className="mt-4 flex">
           <p className="font-bold text-gray-800">TAG : </p>
