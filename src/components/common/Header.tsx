@@ -3,12 +3,7 @@ import { useState } from "react";
 
 import Container from "@/components/common/parts/Container";
 import CategoryBlock from "./CategoryBlock";
-
-const headerLinkList = [
-  { title: "Home", link: "/" },
-  { title: "About", link: "/" },
-  { title: "Contact", link: "/" },
-];
+import MenuList from "./MenuList";
 
 const Header = (props: any): JSX.Element => {
   // ドロワーの開閉の状態
@@ -76,22 +71,14 @@ const Header = (props: any): JSX.Element => {
 
         {/* ドロワーメニュー */}
         <nav
-          className={`fixed top-0 right-0 z-20 h-screen w-4/5 bg-zinc-50 px-6 pt-28 duration-300 md:hidden ${
+          className={`fixed top-0 right-0 z-20 h-screen w-4/5 overflow-y-scroll bg-zinc-50 px-6 py-24 duration-300 md:hidden ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <CategoryBlock database={props.database} />
-          <ol className="mt-6 flex flex-col items-start space-y-2 text-gray-900">
-            {headerLinkList.map(({ title, link }) => (
-              <li key={title}>
-                <Link href={link}>
-                  <a className="py-2 px-4" onClick={handleMenuClick}>
-                    {title}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ol>
+          <nav className="mt-6 px-4">
+            <MenuList />
+          </nav>
         </nav>
       </Container>
     </header>
