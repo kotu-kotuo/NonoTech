@@ -2,8 +2,9 @@ import Layout from "@/components/common/Layout";
 import { fetchDatabase } from "@/lib/notion";
 import { GetStaticProps } from "next";
 import React from "react";
+import { Database } from "types/types";
 
-const Terms = (props: any) => {
+const Terms = (props: { database: Database }) => {
   return (
     <Layout
       path="/terms"

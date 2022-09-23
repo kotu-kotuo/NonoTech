@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import { Database } from "types/types";
 
-const TagBlock = ({ database }: any) => {
+const TagBlock = ({ database }: { database: Database }) => {
   return (
     <div className="w-full rounded-b bg-white">
       <div className="rounded-t bg-primary py-2 pl-3 text-xl font-bold text-white">

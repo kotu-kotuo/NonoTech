@@ -4,8 +4,9 @@ import { useState } from "react";
 import Container from "@/components/common/parts/Container";
 import CategoryBlock from "./CategoryBlock";
 import MenuList from "./MenuList";
+import { Database } from "types/types";
 
-const Header = (props: any): JSX.Element => {
+const Header = (props: { database: Database }): JSX.Element => {
   // ドロワーの開閉の状態
   const [isOpen, setIsOpen] = useState<boolean>(false);
 

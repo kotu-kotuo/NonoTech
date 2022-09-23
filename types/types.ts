@@ -10,7 +10,7 @@ export type LayoutProps = {
   noTitleTemplate?: boolean;
   isTopPage?: boolean;
   children: React.ReactNode;
-  database?: any;
+  database: Database;
 };
 
 export type PageProps = {
@@ -24,6 +24,10 @@ export type PageProps = {
   content: string;
 };
 
+export type Database = {
+  response: { properties: PropertyType };
+};
+
 export type CardProps = { page: PageType };
 
 export type ArticleProps = {
@@ -32,7 +36,10 @@ export type ArticleProps = {
   database: any;
 };
 
-export type IndexProps = { pages: PageType[]; database: any };
+export type IndexProps = {
+  pages: PageType[];
+  database: Database;
+};
 
 export type CategoryProps = IndexProps & { category: string };
 
@@ -72,8 +79,10 @@ export type PropertyType = {
   publishedAt: { date: { start: string } };
   updatedAt: { last_edited_time: string };
   isPublic: { checkbox: boolean };
-  category: { select: { name: string } };
-  tags: { multi_select: [{ name: string }] };
+  category: { select: { options: { id: string; name: string }[] } };
+  tags: {
+    multi_select: { options: { id: string; name: string }[] };
+  };
 };
 
 export type PageType = {
