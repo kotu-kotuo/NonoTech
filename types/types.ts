@@ -79,7 +79,9 @@ export type PropertyType = {
   publishedAt: { date: { start: string } };
   updatedAt: { last_edited_time: string };
   isPublic: { checkbox: boolean };
-  category: { select: { options: { id: string; name: string }[] } };
+  category: {
+    select: { options: { id: string; name: string }[] };
+  };
   tags: {
     multi_select: { options: { id: string; name: string }[] };
   };
@@ -88,5 +90,18 @@ export type PropertyType = {
 export type PageType = {
   id: string;
   cover: FileType | null;
-  properties: PropertyType;
+  //pageのcategoryは1つだけなのでPropertyTypeとは別に作りました
+  properties: {
+    title: { title: RichTextType[] };
+    slug: { rich_text: RichTextType[] };
+    publishedAt: { date: { start: string } };
+    updatedAt: { last_edited_time: string };
+    isPublic: { checkbox: boolean };
+    category: {
+      select: { id: string; name: string };
+    };
+    tags: {
+      multi_select: { options: { id: string; name: string }[] };
+    };
+  };
 };
