@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Container from "@/components/common/parts/Container";
+import CategoryBlock from "./CategoryBlock";
 
 const headerLinkList = [
   { title: "Home", link: "/" },
@@ -9,7 +10,7 @@ const headerLinkList = [
   { title: "Contact", link: "/" },
 ];
 
-const Header = (): JSX.Element => {
+const Header = (props: any): JSX.Element => {
   // ドロワーの開閉の状態
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -75,11 +76,12 @@ const Header = (): JSX.Element => {
 
         {/* ドロワーメニュー */}
         <nav
-          className={`fixed top-0 right-0 z-20 h-screen w-4/5 bg-white px-6 pt-28 duration-300 md:hidden ${
+          className={`fixed top-0 right-0 z-20 h-screen w-4/5 bg-zinc-50 px-6 pt-28 duration-300 md:hidden ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ol className="flex flex-col items-end space-y-2 font-bold">
+          <CategoryBlock database={props.database} />
+          <ol className="mt-6 flex flex-col items-start space-y-2 text-gray-900">
             {headerLinkList.map(({ title, link }) => (
               <li key={title}>
                 <Link href={link}>

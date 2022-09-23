@@ -58,7 +58,7 @@ const Layout = ({
       />
 
       <div className="flex min-h-screen flex-col">
-        <Header />
+        <Header database={database} />
         <main className="flex-1 bg-neutral-100">
           <div
             className={`mx-auto max-w-6xl px-4 md:flex  md:px-8 ${
