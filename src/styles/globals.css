@@ -4,13 +4,8 @@
 
 @layer base {
   body {
-    @apply leading-relaxed tracking-[0.01em];
+    @apply font-sans leading-relaxed tracking-[0.01em];
   }
-}
-
-body {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", YuGothic, "Yu Gothic",
-    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 /*==============================================
