@@ -1,33 +1,16 @@
 # NonoTech
-Next.js × NotionAPIで作成した技術ブログ
+Tech blog created with Next.js × NotionAPI
+<br><br>
+I tried to create a design that was easy to understand and comfortable to view.
+<br><br><br>
 
-
-# ディレクトリ構成について
-
-今回は、すべてのファイルを `src` に入れています。
-コンポーネントのディレクトリは機能ベースで切る方針をとっています。
-
-```js
-.
-├── .next
-├── public // 画像ファイルを格納する
-├── src
-│   ├── components // コンポーネントは機能ベースでディレクトリを切る
-│   │   ├── common // 複数の機能にまたがって使用するコンポーネント
-│   │   │   ├── parts // さらにコンポーネントの中で使い回せるものはpartsに切り出す
-│   │   │   │   ├── Button.tsx
-│   │   │   │   └── ...
-│   │   │   ├── Layout.tsx
-│   │   │   ├── Header.tsx
-│   │   │   └── ...
-│   │   ├── form // 例: フォームの機能で使用するコンポーネント
-│   │   └── ...
-│   ├── hooks // カスタムフックを配置する
-│   ├── lib // ライブラリに関係する関数など
-│   ├── pages // ページテンプレートを配置する
-│   │   ├── _app.tsx
-│   │   ├── _document.tsx
-│   │   └── index.tsx
-│   └── styles
-...
-```
+## Tech stack
+- React
+- TypeScript
+- Next.js (SSG, ISR → SSR  
+- TailwindCSS
+- NotionAPI
+- notion-react-renderer
+- react-notion-x (soon...
+- react-syntax-highlighter (Prism.js (soon...
+- Figma 
