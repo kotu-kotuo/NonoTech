@@ -1,9 +1,9 @@
 import NextHeadSeo from "next-head-seo";
-import Footer from "@/components/common/Footer";
-import Header from "@/components/common/Header";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { LayoutProps } from "types/types";
-import TagBlock from "./TagBlock";
-import CategoryBlock from "./CategoryBlock";
+import TagBlock from "../common/TagBlock";
+import CategoryBlock from "../common/CategoryBlock";
 
 // Layout のデフォルト設定
 const APP_NAME = "NonoTech";

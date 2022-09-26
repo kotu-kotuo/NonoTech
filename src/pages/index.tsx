@@ -1,5 +1,5 @@
 import { GetServerSideProps, GetStaticProps, NextPage } from "next";
-import Layout from "@/components/common/Layout";
+import Layout from "@/components/layout/Layout";
 import Card from "@/components/common/Card";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { IndexProps } from "types/types";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Container from "@/components/common/parts/Container";
-import MenuList from "./MenuList";
+import MenuList from "../common/MenuList";
 
 const Footer = (): JSX.Element => {
   return (

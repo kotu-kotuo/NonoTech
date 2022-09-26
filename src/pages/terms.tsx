@@ -1,4 +1,4 @@
-import Layout from "@/components/common/Layout";
+import Layout from "@/components/layout/Layout";
 import { fetchDatabase } from "@/lib/notion";
 import { GetStaticProps } from "next";
 import React from "react";

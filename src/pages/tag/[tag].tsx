@@ -1,5 +1,5 @@
 import Card from "@/components/common/Card";
-import Layout from "@/components/common/Layout";
+import Layout from "@/components/layout/Layout";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { GetServerSideProps, NextPage } from "next";
 import React from "react";

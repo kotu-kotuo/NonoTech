@@ -2,8 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Container from "@/components/common/parts/Container";
-import CategoryBlock from "./CategoryBlock";
-import MenuList from "./MenuList";
+import CategoryBlock from "../common/CategoryBlock";
+import MenuList from "../common/MenuList";
 import { Database } from "types/types";
 
 const Header = (props: { database: Database }): JSX.Element => {
