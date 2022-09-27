@@ -5,6 +5,7 @@ import Container from "@/components/common/parts/Container";
 import CategoryBlock from "../common/CategoryBlock";
 import MenuList from "../common/MenuList";
 import { Database } from "types/types";
+import TagBlock from "../common/TagBlock";
 
 const Header = (props: { database: Database }): JSX.Element => {
   // ドロワーの開閉の状態
@@ -72,12 +73,13 @@ const Header = (props: { database: Database }): JSX.Element => {
 
         {/* ドロワーメニュー */}
         <nav
-          className={`fixed top-0 right-0 z-20 h-screen w-4/5 overflow-y-scroll bg-zinc-50 px-6 py-24 duration-300 md:hidden ${
+          className={`fixed top-0 right-0 z-20 h-screen w-4/5 space-y-6 overflow-y-scroll bg-zinc-50 px-6 py-20 duration-300 md:hidden ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <CategoryBlock database={props.database} />
-          <nav className="mt-6 px-4">
+          <TagBlock database={props.database} />
+          <nav className="px-4">
             <MenuList />
           </nav>
         </nav>
