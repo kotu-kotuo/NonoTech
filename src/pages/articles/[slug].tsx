@@ -46,14 +46,16 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-[15px] text-secondary">
           <Link href="/">
             <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
-              <HiHome />
+              <HiHome className="mb-[0.8px]" />
               <p>Home</p>
             </div>
           </Link>
           <RiArrowDropRightLine className="-mx-1.5 text-xl text-[#55DDA6]" />
-          <p className="cursor-pointer hover:opacity-80">
-            {page.properties.category.select.name}
-          </p>
+          <Link href={`/category/${page.properties.category.select.name}`}>
+            <p className="cursor-pointer hover:opacity-80">
+              {page.properties.category.select.name}
+            </p>
+          </Link>
         </div>
 
         {/* タイトル */}
