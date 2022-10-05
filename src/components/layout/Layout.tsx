@@ -1,7 +1,7 @@
 import NextHeadSeo from "next-head-seo";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import { LayoutProps } from "types/types";
+import { LayoutProps } from "@/types/types";
 import TagBlock from "../common/TagBlock";
 import CategoryBlock from "../common/CategoryBlock";
 

@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { GetServerSideProps, NextPage } from "next";
 import React from "react";
-import { IndexProps, Params } from "types/types";
+import { IndexProps, Params } from "@/types/types";
 
 const Tag: NextPage<IndexProps> = ({ pages, database }) => {
   return (

@@ -8,7 +8,7 @@ import {
 } from "next";
 import NotionBlocks from "notion-block-renderer";
 import React, { Key } from "react";
-import { ArticleProps } from "types/types";
+import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
 import { RiArrowDropRightLine } from "react-icons/ri";

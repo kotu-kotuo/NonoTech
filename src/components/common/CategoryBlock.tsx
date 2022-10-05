@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Database } from "types/types";
+import { Database } from "@/types/types";
 
 const CategoryBlock = ({ database }: { database: Database }) => {
   return (

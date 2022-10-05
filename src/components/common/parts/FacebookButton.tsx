@@ -1,7 +1,7 @@
 import { getText } from "@/lib/propaty";
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
-import { PageType } from "types/types";
+import { PageType } from "@/types/types";
 
 const FacebookButton = (props: { page: PageType }) => {
   return (

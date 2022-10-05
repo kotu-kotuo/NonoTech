@@ -1,7 +1,7 @@
 import { getText } from "@/lib/propaty";
 import React from "react";
 import { SiHatenabookmark } from "react-icons/si";
-import { PageType } from "types/types";
+import { PageType } from "@/types/types";
 
 const HatenaButton = (props: { page: PageType }) => {
   return (

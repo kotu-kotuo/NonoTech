@@ -2,7 +2,11 @@ import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import Layout from "@/components/layout/Layout";
 import Card from "@/components/common/Card";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
-import { IndexProps } from "types/types";
+import { IndexProps } from "@/types/types";
+// import { NotionAPI } from "notion-client";
+// const notion = new NotionAPI();
+
+// const recordMap = notion.getPage("067dd719a912471ea9a3ac10710e7fdf");
 
 const Home: NextPage<IndexProps> = ({ pages, database }) => {
   // console.log(pages);

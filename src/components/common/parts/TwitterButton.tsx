@@ -1,7 +1,7 @@
 import { getText } from "@/lib/propaty";
 import React from "react";
 import { FaTwitter } from "react-icons/fa";
-import { PageType } from "types/types";
+import { PageType } from "@/types/types";
 
 type TwitterButton = {
   page: PageType;

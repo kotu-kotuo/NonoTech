@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-import { CardProps } from "types/types";
+import { CardProps } from "@/types/types";
 import { getCover, getDate, getText } from "@/lib/propaty";
 
 const Card: FC<CardProps> = ({ page }) => {

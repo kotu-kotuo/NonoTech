@@ -3,7 +3,7 @@ import { useState } from "react";
 import Container from "@/components/common/parts/Container";
 import CategoryBlock from "../common/CategoryBlock";
 import MenuList from "../common/MenuList";
-import { Database } from "types/types";
+import { Database } from "@/types/types";
 import TagBlock from "../common/TagBlock";
 
 const Header = (props: { database: Database }): JSX.Element => {
