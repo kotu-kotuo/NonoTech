@@ -3,14 +3,13 @@ import Layout from "@/components/layout/Layout";
 import Card from "@/components/common/Card";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { IndexProps } from "@/types/types";
-// import { NotionAPI } from "notion-client";
-// const notion = new NotionAPI();
-
-// const recordMap = notion.getPage("067dd719a912471ea9a3ac10710e7fdf");
+import useSWR from "swr";
 
 const Home: NextPage<IndexProps> = ({ pages, database }) => {
-  // console.log(pages);
   console.log(database);
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data: notionX } = useSWR("/api/notion", fetcher);
+  console.log(notionX);
   return (
     <Layout
       path="/"
