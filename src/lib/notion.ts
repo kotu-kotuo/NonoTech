@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { NotionAPI } from "notion-client";
 
 const notion = new Client({ auth: process.env.NOTION_KEY as string });
 const DATABASE_ID = process.env.NOTION_DATABASE_ID as string;
@@ -81,6 +82,16 @@ export const fetchBlocksByPageId = async (pageId: string) => {
     cursor = next_cursor;
   }
   return { results: data };
+};
+
+export const getPages = async (pageId: string) => {
+  const notionX = await new NotionAPI({
+    activeUser: process.env.NOTION_USER_ID,
+    authToken: process.env.NOTION_TOKEN_V2,
+  });
+
+  const recordMap = await notionX.getPage(pageId);
+  return recordMap;
 };
 
 export const fetchDatabase = async () => {

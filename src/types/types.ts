@@ -34,6 +34,7 @@ export type ArticleProps = {
   page: PageType | any;
   blocks: BlockType[];
   database: any;
+  notionX: any;
 };
 
 export type IndexProps = {

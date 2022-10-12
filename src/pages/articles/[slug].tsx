@@ -1,5 +1,10 @@
 import Layout from "@/components/layout/Layout";
-import { fetchPages, fetchBlocksByPageId, fetchDatabase } from "@/lib/notion";
+import {
+  fetchPages,
+  fetchBlocksByPageId,
+  fetchDatabase,
+  getPages,
+} from "@/lib/notion";
 import {
   GetServerSideProps,
   GetStaticPaths,
@@ -19,10 +24,57 @@ import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import TwitterButton from "@/components/common/parts/TwitterButton";
 import FacebookButton from "@/components/common/parts/FacebookButton";
 import HatenaButton from "@/components/common/parts/HatenaButton";
+import { NotionRenderer } from "react-notion-x";
+import dynamic from "next/dynamic";
 
-const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
+const Article: NextPage<ArticleProps> = ({
+  page,
+  blocks,
+  database,
+  notionX,
+}) => {
   // console.log(page);
   // console.log(blocks);
+
+  const Code = dynamic(() =>
+    import("react-notion-x/build/third-party/code").then(async (m) => {
+      // additional prism syntaxes
+      await Promise.all([
+        import("prismjs/components/prism-markup-templating.js" as string),
+        import("prismjs/components/prism-markup.js" as string),
+        import("prismjs/components/prism-bash.js" as string),
+        import("prismjs/components/prism-c.js" as string),
+        import("prismjs/components/prism-cpp.js" as string),
+        import("prismjs/components/prism-csharp.js" as string),
+        import("prismjs/components/prism-docker.js" as string),
+        import("prismjs/components/prism-java.js" as string),
+        import("prismjs/components/prism-js-templates.js" as string),
+        import("prismjs/components/prism-coffeescript.js" as string),
+        import("prismjs/components/prism-diff.js" as string),
+        import("prismjs/components/prism-git.js" as string),
+        import("prismjs/components/prism-go.js" as string),
+        import("prismjs/components/prism-graphql.js" as string),
+        import("prismjs/components/prism-handlebars.js" as string),
+        import("prismjs/components/prism-less.js" as string),
+        import("prismjs/components/prism-makefile.js" as string),
+        import("prismjs/components/prism-markdown.js" as string),
+        import("prismjs/components/prism-objectivec.js" as string),
+        import("prismjs/components/prism-ocaml.js" as string),
+        import("prismjs/components/prism-python.js" as string),
+        import("prismjs/components/prism-reason.js" as string),
+        import("prismjs/components/prism-rust.js" as string),
+        import("prismjs/components/prism-sass.js" as string),
+        import("prismjs/components/prism-scss.js" as string),
+        import("prismjs/components/prism-solidity.js" as string),
+        import("prismjs/components/prism-sql.js" as string),
+        import("prismjs/components/prism-stylus.js" as string),
+        import("prismjs/components/prism-swift.js" as string),
+        import("prismjs/components/prism-wasm.js" as string),
+        import("prismjs/components/prism-yaml.js" as string),
+      ]);
+      return m.Code;
+    })
+  );
 
   const metaDescription = blocks
     .map((block) => {
@@ -101,6 +153,13 @@ const Article: NextPage<ArticleProps> = ({ page, blocks, database }) => {
             syntaxHighlighterCSS={irBlack}
           />
         </div>
+
+        {/* <NotionRenderer
+          recordMap={notionX}
+          fullPage={true}
+          darkMode={false}
+          components={{ nextImage: Image, nextLink: Link, Code }}
+        /> */}
 
         {/* シェアボタン */}
         <div className="my-16">
@@ -189,11 +248,13 @@ export const getServerSideProps: GetServerSideProps<
   const pageId = page.id;
   const { results: blocks } = await fetchBlocksByPageId(pageId);
   const database = await fetchDatabase();
+  const notionX = await getPages(pageId);
   return {
     props: {
       page: page,
       blocks: blocks,
       database: database,
+      notionX: notionX,
     },
   };
 };

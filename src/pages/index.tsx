@@ -3,13 +3,10 @@ import Layout from "@/components/layout/Layout";
 import Card from "@/components/common/Card";
 import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { IndexProps } from "@/types/types";
-import useSWR from "swr";
 
 const Home: NextPage<IndexProps> = ({ pages, database }) => {
   console.log(database);
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data: notionX } = useSWR("/api/notion", fetcher);
-  console.log(notionX);
+
   return (
     <Layout
       path="/"

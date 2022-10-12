@@ -10,8 +10,8 @@ const Card: FC<CardProps> = ({ page }) => {
       <div className="flex cursor-pointer gap-x-3 bg-white p-3 shadow-sm hover:opacity-80">
         <div className="min-w-[80px] max-w-[88px]">
           <Image
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             alt="記事の画像"
             src={
               getCover(page.cover)
