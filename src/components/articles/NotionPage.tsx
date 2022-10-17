@@ -6,7 +6,7 @@ import { FC } from "react";
 import { NotionRenderer } from "react-notion-x";
 import TweetEmbed from "react-tweet-embed";
 
-const Code = dynamic(() =>
+const Code: any = dynamic<any>(() =>
   import("react-notion-x/build/third-party/code").then(async (m) => {
     // additional prism syntaxes
     await Promise.all([
