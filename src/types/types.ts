@@ -1,4 +1,5 @@
 import { BlockType } from "notion-block-renderer";
+import { ExtendedRecordMap } from "notion-types";
 import { ParsedUrlQuery } from "querystring";
 
 export type LayoutProps = {
@@ -34,7 +35,7 @@ export type ArticleProps = {
   page: PageType | any;
   blocks: BlockType[];
   database: any;
-  notionX: any;
+  recordMap: ExtendedRecordMap;
 };
 
 export type IndexProps = {
