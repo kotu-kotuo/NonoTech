@@ -70,7 +70,7 @@ const Article: NextPage<ArticleProps> = ({
         </div>
 
         {/* タイトル */}
-        <h1 className="text-[1.35rem] font-bold text-gray-900">
+        <h1 className="text-2xl font-bold text-gray-900 md:text-[26px] md:leading-10">
           {getText(page.properties.title.title)}
         </h1>
 
@@ -113,7 +113,10 @@ const Article: NextPage<ArticleProps> = ({
           />
         </div>
 
-        {/* <NotionPage recordMap={recordMap} /> */}
+        {/* 本文 */}
+        {/* <div className="my-8">
+          <NotionPage recordMap={recordMap} />
+        </div> */}
 
         {/* シェアボタン */}
         <div className="my-16">
