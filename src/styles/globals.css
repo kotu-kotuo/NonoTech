@@ -72,21 +72,48 @@
   display: none !important;
 }
 
+.notion {
+  font-family: "Helvetica Neue", "Arial", "system-ui", "-apple-system",
+    "BlinkMacSystemFont", "Noto Sans JP", "Segoe UI", "sans-serif",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  color: #111827 !important;
+}
+
 .notion-page {
   @apply p-0 !important;
+}
+
+.notion-blank {
+  @apply m-0 p-0 !important;
 }
 
 .notion-h {
   @apply w-full !important;
 }
 .notion-h1 {
-  @apply mt-12 mb-7 border-b-[1.5px] border-secondary pb-2 text-2xl font-bold leading-tight md:mb-8 !important;
+  @apply mt-10 mb-7 border-b-[1.5px] border-secondary pb-2 text-2xl font-bold leading-tight md:mb-8 !important;
 }
 
 .notion-h2 {
-  @apply mt-9 mb-7 border-l-4 border-primary pl-2 text-[22px] font-bold leading-relaxed !important;
+  @apply mt-7 mb-5 border-l-4 border-primary pl-2 text-[22px] font-bold leading-relaxed !important;
 }
 
 .notion-h3 {
-  @apply mt-6 mb-3 ml-3 text-[19px] font-bold leading-relaxed before:absolute before:top-[0.7rem] before:-left-[0.8rem] before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+  @apply mt-4 mb-3 ml-4 text-[19px] font-bold leading-relaxed before:absolute before:top-[0.7rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+}
+
+.notion-text {
+  @apply mb-6 text-base leading-relaxed text-gray-900 !important;
+}
+
+.notion-quote {
+  @apply mb-6 mt-2 border-l-4 border-solid border-gray-600 py-1.5 px-3 text-base italic text-gray-600 !important;
+}
+
+.notion-callout {
+  @apply mb-6 border-none bg-gray-100 !important;
+}
+
+.notion-callout .notion-page-icon-inline {
+  display: none;
 }
