@@ -1,4 +1,3 @@
-import { BlockType } from "notion-block-renderer";
 import { ExtendedRecordMap } from "notion-types";
 import { ParsedUrlQuery } from "querystring";
 
@@ -35,6 +34,7 @@ export type ArticleProps = {
   page: PageType | any;
   database: any;
   recordMap: ExtendedRecordMap;
+  metaDescription: string;
 };
 
 export type IndexProps = {

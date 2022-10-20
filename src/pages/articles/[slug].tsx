@@ -3,6 +3,7 @@ import {
   fetchPages,
   fetchDatabase,
   getPages,
+  fetchBlocksByPageId,
 } from "@/lib/notion";
 import {
   GetServerSideProps,
@@ -22,27 +23,21 @@ import TwitterButton from "@/components/common/parts/TwitterButton";
 import FacebookButton from "@/components/common/parts/FacebookButton";
 import HatenaButton from "@/components/common/parts/HatenaButton";
 import NotionPage from "@/components/articles/NotionPage";
+import { BlockType } from "notion-block-renderer";
 
-const Article: NextPage<ArticleProps> = ({ page, database, recordMap }) => {
-  // console.log(page);
-  console.log(recordMap);
-
-  // const metaDescription = blocks
-  //   .map((block) => {
-  //     if (block.type === "paragraph") {
-  //       return getText(block.paragraph.rich_text);
-  //     }
-  //   })
-  //   .join("")
-  //   .substring(0, 100);
-
+const Article: NextPage<ArticleProps> = ({
+  page,
+  database,
+  recordMap,
+  metaDescription,
+}) => {
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
       title={getText(page.properties.title.title)}
       database={database}
       ogImage={getCover(page.cover)}
-      // description={metaDescription}
+      description={metaDescription}
     >
       <div className="rounded bg-white py-8 md:my-8 md:px-10">
         {/* パンくずリスト */}
@@ -183,16 +178,29 @@ export const getServerSideProps: GetServerSideProps<
   if (!ctx.params) {
     return { notFound: true };
   }
+
   const { results } = await fetchPages({ slug: ctx.params.slug });
   const page = results[0];
   const pageId = page.id;
   const database = await fetchDatabase();
   const recordMap = await getPages(pageId);
+  const { results: blocks }: { results: BlockType[] } =
+    await fetchBlocksByPageId(pageId);
+  const metaDescription = blocks
+    .map((block) => {
+      if (block.type === "paragraph") {
+        return getText(block.paragraph.rich_text);
+      }
+    })
+    .join("")
+    .substring(0, 100);
+
   return {
     props: {
       page: page,
       database: database,
       recordMap: recordMap,
+      metaDescription: metaDescription,
     },
   };
 };
