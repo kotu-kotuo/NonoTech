@@ -9,60 +9,6 @@
 }
 
 /*==============================================
-# Notion Block
-===============================================*/
-
-.nbr-block-h1 > h1 {
-  @apply mt-14 mb-7 border-b-[1.5px] border-secondary pb-2 text-2xl font-bold leading-tight md:mb-8;
-}
-
-.nbr-block-h2 > h2 {
-  @apply mt-12 mb-7 border-l-4 border-primary pl-1.5 text-[22px] font-bold leading-relaxed;
-}
-
-.nbr-block-h3 > h3 {
-  @apply mt-11 mb-4 text-[19px] font-bold leading-relaxed;
-}
-
-.nbr-block-p > p {
-  @apply mb-8 text-base leading-relaxed text-gray-900;
-}
-
-.nbr-bold {
-  @apply font-bold;
-}
-
-.nbr-link {
-  @apply cursor-pointer break-words border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary;
-}
-
-.nbr-caption {
-  @apply mt-1 mb-8 text-center text-sm text-gray-600;
-}
-
-.nbr-block-ul {
-  @apply mb-10 list-disc pl-6;
-}
-.nbr-block-ul > li {
-  @apply my-1.5;
-}
-.nbr-block-ul > li::marker {
-  @apply text-lg text-gray-600;
-}
-
-.nbr-block-code {
-  @apply max-w-[674px] text-sm;
-}
-/* Hide only scrollbar */
-.nbr-block-code pre::-webkit-scrollbar {
-  @apply hidden !important;
-}
-.nbr-block-code .syntax-highlighter-pre {
-  @apply rounded;
-  @apply p-5 !important;
-}
-
-/*==============================================
 # React Notion X
 ===============================================*/
 

@@ -33,7 +33,6 @@ export type CardProps = { page: PageType };
 
 export type ArticleProps = {
   page: PageType | any;
-  blocks: BlockType[];
   database: any;
   recordMap: ExtendedRecordMap;
 };
@@ -46,8 +45,6 @@ export type IndexProps = {
 export type CategoryProps = IndexProps & { category: string };
 
 export type TagProps = IndexProps & { tag: string };
-
-export type BlockProps = { block: BlockType };
 
 export type Params = ParsedUrlQuery & {
   slug?: string;

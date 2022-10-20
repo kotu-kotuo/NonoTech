@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import {
   fetchPages,
-  fetchBlocksByPageId,
   fetchDatabase,
   getPages,
 } from "@/lib/notion";
@@ -11,7 +10,6 @@ import {
   GetStaticProps,
   NextPage,
 } from "next";
-import NotionBlocks from "notion-block-renderer";
 import React, { Key } from "react";
 import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
@@ -20,29 +18,23 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { irBlack } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import TwitterButton from "@/components/common/parts/TwitterButton";
 import FacebookButton from "@/components/common/parts/FacebookButton";
 import HatenaButton from "@/components/common/parts/HatenaButton";
 import NotionPage from "@/components/articles/NotionPage";
 
-const Article: NextPage<ArticleProps> = ({
-  page,
-  blocks,
-  database,
-  recordMap,
-}) => {
+const Article: NextPage<ArticleProps> = ({ page, database, recordMap }) => {
   // console.log(page);
-  // console.log(blocks);
+  console.log(recordMap);
 
-  const metaDescription = blocks
-    .map((block) => {
-      if (block.type === "paragraph") {
-        return getText(block.paragraph.rich_text);
-      }
-    })
-    .join("")
-    .substring(0, 100);
+  // const metaDescription = blocks
+  //   .map((block) => {
+  //     if (block.type === "paragraph") {
+  //       return getText(block.paragraph.rich_text);
+  //     }
+  //   })
+  //   .join("")
+  //   .substring(0, 100);
 
   return (
     <Layout
@@ -50,7 +42,7 @@ const Article: NextPage<ArticleProps> = ({
       title={getText(page.properties.title.title)}
       database={database}
       ogImage={getCover(page.cover)}
-      description={metaDescription}
+      // description={metaDescription}
     >
       <div className="rounded bg-white py-8 md:my-8 md:px-10">
         {/* パンくずリスト */}
@@ -103,15 +95,6 @@ const Article: NextPage<ArticleProps> = ({
           height={400}
           quality={30}
         />
-
-        {/* 本文 */}
-        {/* <div className="my-8">
-          <NotionBlocks
-            blocks={blocks}
-            isCodeHighlighter={true}
-            syntaxHighlighterCSS={irBlack}
-          />
-        </div> */}
 
         {/* 本文 */}
         <div className="my-8">
@@ -203,13 +186,11 @@ export const getServerSideProps: GetServerSideProps<
   const { results } = await fetchPages({ slug: ctx.params.slug });
   const page = results[0];
   const pageId = page.id;
-  const { results: blocks } = await fetchBlocksByPageId(pageId);
   const database = await fetchDatabase();
   const recordMap = await getPages(pageId);
   return {
     props: {
       page: page,
-      blocks: blocks,
       database: database,
       recordMap: recordMap,
     },
