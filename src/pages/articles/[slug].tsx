@@ -52,7 +52,7 @@ const Article: NextPage<ArticleProps> = ({
       ogImage={getCover(page.cover)}
       description={metaDescription}
     >
-      <div className="rounded bg-white pt-8 pb-16 md:my-8 md:px-10">
+      <div className="rounded bg-white py-8 md:my-8 md:px-10">
         {/* パンくずリスト */}
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-[15px] text-secondary">
           <Link href="/">
@@ -105,21 +105,21 @@ const Article: NextPage<ArticleProps> = ({
         />
 
         {/* 本文 */}
-        <div className="my-8">
+        {/* <div className="my-8">
           <NotionBlocks
             blocks={blocks}
             isCodeHighlighter={true}
             syntaxHighlighterCSS={irBlack}
           />
-        </div>
-
-        {/* 本文 */}
-        {/* <div className="my-8">
-          <NotionPage recordMap={recordMap} />
         </div> */}
 
+        {/* 本文 */}
+        <div className="my-8">
+          <NotionPage recordMap={recordMap} />
+        </div>
+
         {/* シェアボタン */}
-        <div className="my-16">
+        <div className="mt-10 mb-14">
           <p className="text-center text-xl font-bold text-gray-800">SHARE</p>
           <div className="mt-4 flex items-center justify-center gap-x-6 text-4xl">
             <TwitterButton page={page} padding="p-[6px]" />
