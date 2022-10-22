@@ -41,11 +41,11 @@
 }
 
 .notion-h2 {
-  @apply mt-5 mb-5 border-l-4 border-primary pl-2 text-[22px] font-bold leading-relaxed !important;
+  @apply mt-4 mb-5 border-l-4 border-primary pl-2 text-[21px] font-bold leading-tight !important;
 }
 
 .notion-h3 {
-  @apply mt-4 mb-4 ml-4 text-[19px] font-bold leading-relaxed before:absolute before:top-[0.7rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+  @apply mt-4 mb-4 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
 }
 
 .notion-text {
