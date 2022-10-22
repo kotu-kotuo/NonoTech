@@ -5,12 +5,7 @@ import {
   getPages,
   fetchBlocksByPageId,
 } from "@/lib/notion";
-import {
-  GetServerSideProps,
-  GetStaticPaths,
-  GetStaticProps,
-  NextPage,
-} from "next";
+import { GetServerSideProps, NextPage } from "next";
 import React, { Key } from "react";
 import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
@@ -136,39 +131,6 @@ const Article: NextPage<ArticleProps> = ({
     </Layout>
   );
 };
-
-// export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-//   const { results } = await fetchPages({});
-//   const ids = results.map(
-//     (result: any) => `/articles/${getText(result.properties.slug.rich_text)}`
-//   );
-//   return {
-//     paths: ids,
-//     fallback: false,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps<
-//   ArticleProps,
-//   { slug: string }
-// > = async (ctx) => {
-//   if (!ctx.params) {
-//     return { notFound: true };
-//   }
-//   const { results } = await fetchPages({ slug: ctx.params.slug });
-//   const page = results[0];
-//   const pageId = page.id;
-//   const { results: blocks } = await fetchBlocksByPageId(pageId);
-//   const database = await fetchDatabase();
-//   return {
-//     props: {
-//       page: page,
-//       blocks: blocks,
-//       database: database,
-//     },
-//     revalidate: 100,
-//   };
-// };
 
 // --- image expired対策でSSRに変更
 export const getServerSideProps: GetServerSideProps<

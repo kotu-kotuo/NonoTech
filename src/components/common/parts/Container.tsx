@@ -1,9 +1,3 @@
-/* Container について
- *  max-width とページ左右の余白を設定した共通コンポーネント
- *  コンポーネントを作るときは基本的にこのコンポーネントで囲う
- *  Container の中で Container を使うと余白がずれるので気をつける
- */
-
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   fullWidth?: boolean;
   children: React.ReactNode;

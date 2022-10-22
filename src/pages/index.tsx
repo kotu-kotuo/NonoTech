@@ -5,8 +5,6 @@ import { fetchDatabase, fetchPages } from "@/lib/notion";
 import { IndexProps } from "@/types/types";
 
 const Home: NextPage<IndexProps> = ({ pages, database }) => {
-  console.log(database);
-
   return (
     <Layout
       path="/"
@@ -36,6 +34,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
+export default Home;
+
 // export const getStaticProps: GetStaticProps = async () => {
 //   const { results } = await fetchPages({});
 //   const database = await fetchDatabase();
@@ -47,5 +47,3 @@ export const getServerSideProps: GetServerSideProps = async () => {
 //     revalidate: 100,
 //   };
 // };
-
-export default Home;
