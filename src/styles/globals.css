@@ -41,11 +41,11 @@
 }
 
 .notion-h2 {
-  @apply mt-4 mb-5 border-l-4 border-primary pl-2 text-[21px] font-bold leading-tight !important;
+  @apply mt-3 mb-6 border-l-4 border-primary pl-2 text-[21px] font-bold leading-tight !important;
 }
 
 .notion-h3 {
-  @apply mt-4 mb-4 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+  @apply mt-1 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
 }
 
 .notion-text {
@@ -82,4 +82,12 @@
 
 .notion-link {
   @apply cursor-pointer break-words border-b border-[#0BB864] align-text-bottom leading-tight text-[#0BB864] opacity-100 transition-colors duration-200 hover:border-b-primary hover:text-primary !important;
+}
+
+.notion-table-of-contents {
+  @apply my-3 rounded bg-gray-100 pb-4 pt-2 before:block before:py-2 before:px-3 before:text-lg before:font-bold before:text-gray-600 before:content-["Table_of_Contents"] !important;
+}
+
+.notion-table-of-contents-item {
+  @apply pl-6 text-zinc-800 !important;
 }
