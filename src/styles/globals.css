@@ -25,6 +25,11 @@
   color: #111827 !important;
 }
 
+.notion-app,
+.notion-page-scroller {
+  @apply min-h-0 !important;
+}
+
 .notion-page {
   @apply p-0 !important;
 }

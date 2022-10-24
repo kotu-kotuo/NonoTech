@@ -4,6 +4,8 @@ import Header from "@/components/layout/Header";
 import { LayoutProps } from "@/types/types";
 import TagBlock from "../common/TagBlock";
 import CategoryBlock from "../common/CategoryBlock";
+import Image from "next/image";
+import SelfIntroduction from "./SelfIntroduction";
 
 // Layout のデフォルト設定
 const APP_NAME = "NonoTech";
@@ -73,12 +75,15 @@ const Layout = ({
             <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-10 md:block">
               <CategoryBlock database={database} />
               <TagBlock database={database} />
+              <SelfIntroduction />
             </div>
           </div>
+          {/* 記事下メニュー（モバイル） */}
           <div className="md:hidden">
             <div className="mx-4 my-8 space-y-4">
               <CategoryBlock database={database} />
               <TagBlock database={database} />
+              <SelfIntroduction />
             </div>
           </div>
         </main>
