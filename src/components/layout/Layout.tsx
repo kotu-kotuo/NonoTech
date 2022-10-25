@@ -72,7 +72,7 @@ const Layout = ({
             {/* メインコンテンツ */}
             <div className=" md:w-[72%]">{children}</div>
             {/* サイドバー（PC） */}
-            <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-10 md:block">
+            <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-8 md:block">
               <CategoryBlock database={database} />
               <TagBlock database={database} />
               <SelfIntroduction />

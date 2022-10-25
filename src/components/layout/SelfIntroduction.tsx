@@ -1,4 +1,15 @@
 import Image from "next/image";
+import { AiOutlineLink } from "react-icons/Ai";
+import { BsGithub, BsTwitter } from "react-icons/Bs";
+
+const IconLinks = [
+  {
+    icon: BsGithub,
+    link: "https://github.com/kotu-kotuo",
+  },
+  { icon: BsTwitter, link: "https://twitter.com/kotu_kotuo" },
+  { icon: AiOutlineLink, link: "https://www.resume.id/kotu_kotuo" },
+];
 
 const SelfIntroduction = () => {
   return (
@@ -10,11 +21,25 @@ const SelfIntroduction = () => {
           height={60}
           src="/photo-with-kazu.png"
         />
-        <div className="text-lg font-bold text-gray-900">ノノ</div>
+        <div className="text-lg font-bold text-gray-700">ノノ</div>
       </div>
-      <div className="text-sm text-gray-800">
+      <div className="text-sm text-gray-700">
         React, TypeScript,
         Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。
+      </div>
+      <div className="mt-4 flex items-center justify-center gap-x-6 text-2xl text-gray-600">
+        {IconLinks.map((IconLink) => (
+          <a
+            href={IconLink.link}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            area-label="my link"
+            title="my link"
+            key={IconLink.link}
+          >
+            <IconLink.icon className="cursor-pointer opacity-60 transition hover:opacity-100" />
+          </a>
+        ))}
       </div>
     </div>
   );

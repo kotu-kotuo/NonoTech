@@ -50,7 +50,7 @@
 }
 
 .notion-h3 {
-  @apply mt-1 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+  @apply mt-0 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
 }
 
 .notion-text {
@@ -70,11 +70,11 @@
 }
 
 .notion-code {
-  @apply mb-6 mt-0 rounded !important;
+  @apply mb-8 mt-0 rounded !important;
 }
 
 .notion-asset-wrapper {
-  @apply mt-0 mb-6 !important;
+  @apply mt-0 mb-8 !important;
 }
 
 .notion-asset-wrapper-image img {
