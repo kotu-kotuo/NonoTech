@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { AiOutlineLink } from "react-icons/Ai";
-import { BsGithub, BsTwitter } from "react-icons/Bs";
+import { AiOutlineLink } from "react-icons/ai";
+import { BsGithub, BsTwitter } from "react-icons/bs";
 
 const IconLinks = [
   {
