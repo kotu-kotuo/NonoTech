@@ -6,6 +6,7 @@ import TagBlock from "../common/TagBlock";
 import CategoryBlock from "../common/CategoryBlock";
 import Image from "next/image";
 import SelfIntroduction from "./SelfIntroduction";
+import Search from "../common/Search";
 
 // Layout のデフォルト設定
 const APP_NAME = "NonoTech";
@@ -73,6 +74,7 @@ const Layout = ({
             <div className=" md:w-[72%]">{children}</div>
             {/* サイドバー（PC） */}
             <div className="ml-10 mt-8 hidden w-[28%] min-w-[200px] space-y-8 md:block">
+              <Search />
               <CategoryBlock database={database} />
               <TagBlock database={database} />
               <SelfIntroduction />
@@ -83,6 +85,7 @@ const Layout = ({
             <div className="mx-4 my-8 space-y-4">
               <CategoryBlock database={database} />
               <TagBlock database={database} />
+              <Search />
               <SelfIntroduction />
             </div>
           </div>

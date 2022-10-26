@@ -20,6 +20,7 @@ const SelfIntroduction = () => {
           width={60}
           height={60}
           src="/photo-with-kazu.png"
+          alt="my photo"
         />
         <div className="text-lg font-bold text-gray-700">ノノ</div>
       </div>

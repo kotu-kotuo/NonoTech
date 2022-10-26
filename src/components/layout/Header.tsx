@@ -5,6 +5,7 @@ import CategoryBlock from "../common/CategoryBlock";
 import MenuList from "../common/MenuList";
 import { Database } from "@/types/types";
 import TagBlock from "../common/TagBlock";
+import Search from "../common/Search";
 
 const Header = (props: { database: Database }): JSX.Element => {
   // ドロワーの開閉の状態
@@ -62,6 +63,7 @@ const Header = (props: { database: Database }): JSX.Element => {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
+          <Search />
           <CategoryBlock database={props.database} />
           <TagBlock database={props.database} />
           <nav className="px-4">
