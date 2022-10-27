@@ -4,7 +4,6 @@ import Header from "@/components/layout/Header";
 import { LayoutProps } from "@/types/types";
 import TagBlock from "../common/TagBlock";
 import CategoryBlock from "../common/CategoryBlock";
-import Image from "next/image";
 import SelfIntroduction from "./SelfIntroduction";
 import Search from "../common/Search";
 
