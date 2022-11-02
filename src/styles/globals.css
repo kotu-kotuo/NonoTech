@@ -58,11 +58,11 @@
 }
 
 .notion-quote {
-  @apply mb-6 mt-2 border-l-4 border-solid border-gray-600 py-1.5 px-3 text-base italic text-gray-600 !important;
+  @apply mb-7 mt-2 border-l-4 border-solid border-gray-600 py-1.5 px-3 text-base italic text-gray-600 !important;
 }
 
 .notion-callout {
-  @apply mb-6 rounded border-none bg-amber-100 text-[15px] text-gray-700 !important;
+  @apply mb-8 mt-2 rounded border-none bg-zinc-100 py-5 text-[15px] text-[#333333] md:text-base !important;
 }
 
 .notion-callout .notion-page-icon-inline {
