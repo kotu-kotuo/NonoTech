@@ -2,8 +2,8 @@ import Layout from "@/components/layout/Layout";
 import {
   fetchPages,
   fetchDatabase,
-  getPages,
   fetchBlocksByPageId,
+  getPage,
 } from "@/lib/notion";
 import { GetServerSideProps, NextPage } from "next";
 import React, { Key } from "react";
@@ -145,7 +145,7 @@ export const getServerSideProps: GetServerSideProps<
   const page = results[0];
   const pageId = page.id;
   const database = await fetchDatabase();
-  const recordMap = await getPages(pageId);
+  const recordMap = await getPage(pageId);
   const { results: blocks }: { results: BlockType[] } =
     await fetchBlocksByPageId(pageId);
   const metaDescription = blocks

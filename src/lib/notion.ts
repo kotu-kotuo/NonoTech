@@ -1,3 +1,4 @@
+import { PageType } from "@/types/types";
 import { Client } from "@notionhq/client";
 import { NotionAPI } from "notion-client";
 
@@ -69,6 +70,23 @@ export const fetchPages = async ({
   });
 };
 
+export const searchPages = async (query: string) => {
+  const results: any = await notion.search({
+    query: query,
+    filter: {
+      value: "page",
+      property: "object",
+    },
+    sort: {
+      direction: "descending",
+      timestamp: "last_edited_time",
+    },
+  });
+  return await results.results.filter(
+    (result: PageType) => result.properties.isPublic.checkbox === true
+  );
+};
+
 export const fetchBlocksByPageId = async (pageId: string) => {
   const data = [];
   let cursor = undefined;
@@ -84,7 +102,7 @@ export const fetchBlocksByPageId = async (pageId: string) => {
   return { results: data };
 };
 
-export const getPages = async (pageId: string) => {
+export const getPage = async (pageId: string) => {
   const notionX = await new NotionAPI({
     activeUser: process.env.NOTION_USER_ID,
     authToken: process.env.NOTION_TOKEN_V2,
