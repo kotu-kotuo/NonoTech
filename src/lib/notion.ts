@@ -70,7 +70,7 @@ export const fetchPages = async ({
   });
 };
 
-export const searchPages = async (query: string) => {
+export const searchPages = async (query: string | undefined) => {
   const results: any = await notion.search({
     query: query,
     filter: {

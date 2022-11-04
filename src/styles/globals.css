@@ -70,7 +70,7 @@
 }
 
 .notion-code {
-  @apply mb-8 mt-0 rounded !important;
+  @apply mb-8 mt-0 rounded py-[1.1rem] !important;
 }
 
 .notion-asset-wrapper {

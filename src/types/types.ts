@@ -50,6 +50,7 @@ export type Params = ParsedUrlQuery & {
   slug?: string;
   category?: string;
   tag?: string;
+  query?: string;
 };
 
 export type FileType = {
