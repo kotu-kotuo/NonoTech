@@ -68,7 +68,7 @@ const Article: NextPage<ArticleProps> = ({
           </div>
 
           {/* シェアボタン */}
-          <div className="flex items-center gap-x-2 text-2xl">
+          <div className="flex items-center gap-x-3 text-2xl">
             <TwitterButton page={page} padding="p-[4.5px]" />
             <FacebookButton page={page} />
             <HatenaButton page={page} />
@@ -111,7 +111,7 @@ const Article: NextPage<ArticleProps> = ({
           </Link>
         </p>
         <div className="mt-4 flex">
-          <p className="font-bold text-gray-800">TAG : </p>
+          <p className="whitespace-nowrap font-bold text-gray-800">TAG : </p>
           <ul className="mt-[0.1rem] ml-1 flex flex-wrap">
             {page.properties.tags.multi_select.map(
               (
