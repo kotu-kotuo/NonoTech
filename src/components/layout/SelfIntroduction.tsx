@@ -26,7 +26,7 @@ const SelfIntroduction = () => {
       </div>
       <div className="text-sm text-gray-700">
         React, TypeScript,
-        Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。
+        Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。このブログはNext.js & NotionAPIで作成しています。
       </div>
       <div className="mt-4 flex items-center justify-center gap-x-6 text-2xl text-gray-600">
         {IconLinks.map((IconLink) => (
