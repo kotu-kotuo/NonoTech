@@ -148,14 +148,15 @@ export const getServerSideProps: GetServerSideProps<
   const recordMap = await getPage(pageId);
   const { results: blocks }: { results: BlockType[] } =
     await fetchBlocksByPageId(pageId);
-  const metaDescription = blocks
-    .map((block) => {
-      if (block.type === "paragraph") {
-        return getText(block.paragraph.rich_text);
-      }
-    })
-    .join("")
-    .substring(0, 100);
+  const metaDescription =
+    blocks
+      .map((block) => {
+        if (block.type === "paragraph") {
+          return getText(block.paragraph.rich_text);
+        }
+      })
+      .join("")
+      .substring(0, 150) + "...";
 
   return {
     props: {
