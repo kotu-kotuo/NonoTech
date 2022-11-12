@@ -1,3 +1,4 @@
+import { GA_ID } from "@/lib/gtag";
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -45,6 +46,27 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="u5uK3pZ3UvDmIW6bbQVtFAhobOyPMNCcnIGR50jMjg8"
           />
+
+          {/* Google Analytics */}
+          {GA_ID && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                   window.dataLayer = window.dataLayer || [];
+                   function gtag(){dataLayer.push(arguments);}
+                   gtag('js', new Date());
+                   gtag('config', '${GA_ID}', {
+                     page_path: window.location.pathname,
+                   });`,
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />
