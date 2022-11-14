@@ -26,6 +26,7 @@ const Article: NextPage<ArticleProps> = ({
   recordMap,
   metaDescription,
 }) => {
+  console.log(metaDescription);
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
@@ -148,14 +149,24 @@ export const getServerSideProps: GetServerSideProps<
   const recordMap = await getPage(pageId);
   const { results: blocks }: { results: BlockType[] } =
     await fetchBlocksByPageId(pageId);
+  console.log(blocks);
   const metaDescription =
     blocks
       .map((block) => {
-        if (block.type === "paragraph") {
-          return getText(block.paragraph.rich_text);
+        switch (block.type) {
+          case "paragraph":
+            return getText(block.paragraph.rich_text);
+            break;
+          case "heading_1":
+            return getText(block.heading_1.rich_text);
+            break;
+          case "heading_2":
+            return getText(block.heading_2.rich_text);
+            break;
         }
       })
       .join("")
+      .replace(/^こんにちは、ノノです。/, "")
       .substring(0, 150) + "...";
 
   return {
