@@ -12,7 +12,7 @@ const APP_NAME = "NonoTech";
 const APP_ROOT_URL = "https://nonotech.day"; // 末尾に `/` をつけない
 const APP_DEFAULT_DESCRIPTION =
   "What you have accumulated will be a creativity, and it will be a way of life!";
-const APP_DEFAULT_OG_IMAGE = "/nonotech-ogp.png";
+const APP_DEFAULT_OG_IMAGE = "https://nonotech.day/nonotech-ogp.png";
 
 /* Props について
  *  `path`           : [必須] そのページの相対パスを渡す。
