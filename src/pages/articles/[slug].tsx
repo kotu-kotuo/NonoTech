@@ -26,7 +26,6 @@ const Article: NextPage<ArticleProps> = ({
   recordMap,
   metaDescription,
 }) => {
-  console.log(metaDescription);
   return (
     <Layout
       path={`/articles/${getText(page.properties.slug.rich_text)}`}
@@ -149,7 +148,6 @@ export const getServerSideProps: GetServerSideProps<
   const recordMap = await getPage(pageId);
   const { results: blocks }: { results: BlockType[] } =
     await fetchBlocksByPageId(pageId);
-  console.log(blocks);
   const metaDescription =
     blocks
       .map((block) => {
@@ -162,6 +160,9 @@ export const getServerSideProps: GetServerSideProps<
             break;
           case "heading_2":
             return getText(block.heading_2.rich_text);
+            break;
+          case "heading_3":
+            return getText(block.heading_3.rich_text);
             break;
         }
       })
