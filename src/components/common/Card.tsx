@@ -24,15 +24,15 @@ const Card: FC<CardProps> = ({ page }) => {
           />
         </div>
         <div className="w-full">
-          <div className="mb-4 text-base font-bold text-gray-900 md:text-lg">
+          <div className="mb-2 text-base font-bold text-gray-900 md:text-xl">
             {getText(page.properties.title.title)}
           </div>
-          <div className="flex items-center justify-between">
-            <div className="rounded bg-primary px-2 py-1 text-xs font-bold text-white">
-              {page.properties.category.select.name}
-            </div>
-            <div className="text-sm text-gray-400">
+          <div>
+            <div className="mb-2 text-sm text-gray-400">
               {getDate(page.properties.publishedAt.date)}
+            </div>
+            <div className="w-fit rounded bg-primary px-2 py-1 text-xs font-bold text-white">
+              {page.properties.category.select.name}
             </div>
           </div>
         </div>
