@@ -42,12 +42,13 @@
   @apply w-full p-0 !important;
 }
 .notion-h1 {
-  @apply mt-8 mb-5 border-b-[1.5px] border-secondary border-opacity-100 pb-2 text-2xl font-bold leading-tight md:mb-6 !important;
+  @apply mt-12 mb-5 border-b-[1.5px] border-opacity-90 pb-3 text-[1.75rem] font-bold leading-tight md:mb-6 !important;
 }
 
 .notion-h2 {
-  @apply mt-4 mb-6 border-l-4 border-primary pl-2 text-[21px] font-bold leading-tight !important;
+  @apply mt-4 mb-3 text-[23px] font-bold leading-tight !important;
 }
+/* border-l-4 border-primary pl-2  */
 
 .notion-h3 {
   @apply mt-0 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
