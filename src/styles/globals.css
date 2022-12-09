@@ -95,6 +95,10 @@
   @apply mt-0 mb-12  !important;
 }
 
+.notion-bookmark-image {
+  @apply grow-[0.3] !important;
+}
+
 .notion-table-of-contents {
   @apply mt-3 mb-6 rounded bg-gray-100 pb-4 pt-5 before:block before:px-4 before:pb-1 before:text-xl before:font-bold before:text-gray-700 before:content-["Table_of_Contents"] !important;
 }
