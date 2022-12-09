@@ -11,17 +11,19 @@ const Search: NextPage<IndexProps> = ({ pages, database }) => {
   return (
     <Layout path="/" title="NonoTech" database={database}>
       <div className="mt-8 mb-12 space-y-5 md:mb-16">
-        {pages.map((page, index) => (
-          <Card key={index} page={page} />
-        ))}
         {pages.length === 0 ? (
           <div>
             <div className="py-8 text-center text-3xl font-bold text-gray-600 ">
               記事が見つかりませんでした。。
             </div>
             <div className="relative">
-              <Image width={700} height={400} src="/sika.jpg" />
-              <p className="absolute top-1/2 right-1/4 font-extralight text-white">
+              <Image
+                width={700}
+                height={400}
+                src="/sika.jpg"
+                objectFit="cover"
+              />
+              <p className="absolute top-2/3 right-0 w-1/3 text-left text-lg font-extralight text-white">
                 まじごめん
               </p>
             </div>
@@ -31,7 +33,9 @@ const Search: NextPage<IndexProps> = ({ pages, database }) => {
               </p>
             </Link>
           </div>
-        ) : null}
+        ) : (
+          pages.map((page, index) => <Card key={index} page={page} />)
+        )}
       </div>
     </Layout>
   );
