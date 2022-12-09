@@ -96,9 +96,9 @@
 }
 
 .notion-table-of-contents {
-  @apply mt-3 mb-6 rounded bg-gray-100 pb-4 pt-2 before:block before:py-2 before:px-3 before:text-lg before:font-bold before:text-gray-600 before:content-["Table_of_Contents"] !important;
+  @apply mt-3 mb-6 rounded bg-gray-100 pb-4 pt-5 before:block before:px-4 before:pb-1 before:text-xl before:font-bold before:text-gray-700 before:content-["Table_of_Contents"] !important;
 }
 
 .notion-table-of-contents-item {
-  @apply pl-6 text-zinc-800 !important;
+  @apply pl-6 text-[15px] text-zinc-900 !important;
 }
