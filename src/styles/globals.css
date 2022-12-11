@@ -42,11 +42,11 @@
   @apply w-full p-0 !important;
 }
 .notion-h1 {
-  @apply mt-12 mb-5 border-b-[1.5px] border-opacity-90 pb-3 text-[1.75rem] font-bold leading-tight md:mb-6 !important;
+  @apply mt-12 mb-5 border-b-[1.5px] border-opacity-90 pb-3 text-[26px] font-bold leading-tight md:mb-6 md:text-[28px] !important;
 }
 
 .notion-h2 {
-  @apply mt-4 mb-3 text-[23px] font-bold leading-tight !important;
+  @apply mt-4 mb-4 text-[21px] font-bold leading-tight md:text-[23px] !important;
 }
 /* border-l-4 border-primary pl-2  */
 
@@ -56,6 +56,10 @@
 
 .notion-text {
   @apply m-0 mb-6 p-0 text-base leading-loose text-[#333333] md:text-[17px] !important;
+}
+
+.notion-list {
+  @apply -mt-2 mb-2 !important;
 }
 
 .notion-quote {
@@ -112,9 +116,9 @@
 }
 
 .notion-table-of-contents {
-  @apply mt-3 mb-6 rounded bg-gray-100 pb-4 pt-5 before:block before:px-4 before:pb-1 before:text-xl before:font-bold before:text-gray-700 before:content-["Table_of_Contents"] !important;
+  @apply mt-3 mb-6 rounded bg-gray-100 pb-4 pt-6 before:block before:px-4 before:pb-2 before:text-xl before:font-bold before:text-gray-700 before:content-["Table_of_Contents"] !important;
 }
 
 .notion-table-of-contents-item {
-  @apply pl-6 text-[15px] text-zinc-900 !important;
+  @apply whitespace-pre-wrap pl-6 text-[15px] text-zinc-900 opacity-80 !important;
 }
