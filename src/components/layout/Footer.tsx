@@ -9,8 +9,8 @@ const Footer = (): JSX.Element => {
       <Container>
         <div className="flex flex-col items-start justify-between text-white md:flex-row">
           {/* ロゴ */}
-          <Link href="/">
-            <a className="mb-4 text-2xl font-bold text-white">NonoTech</a>
+          <Link href="/" className="mb-4 text-2xl font-bold text-white">
+            NonoTech
           </Link>
           {/* ナビゲーション. */}
           <nav>

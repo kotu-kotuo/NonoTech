@@ -11,7 +11,11 @@ const CategoryBlock = ({ database }: { database: Database }) => {
       <ul className="space-y-3 py-4 pl-5 text-lg font-bold text-gray-600">
         {database.response?.properties.category.select.options.map(
           (category: { id: string; name: string }) => (
-            <Link href={`/category/${category.name}`} key={category.id}>
+            <Link
+              href={`/category/${category.name}`}
+              key={category.id}
+              legacyBehavior
+            >
               <li className="cursor-pointer hover:opacity-80">
                 {category.name}
               </li>

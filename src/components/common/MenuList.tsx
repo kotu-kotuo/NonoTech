@@ -5,10 +5,11 @@ const MenuList = () => {
   return (
     <ol>
       <li>
-        <Link href="/">
-          <a className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base">
-            ホーム
-          </a>
+        <Link
+          href="/"
+          className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base"
+        >
+          ホーム
         </Link>
       </li>
       <li>
@@ -20,10 +21,11 @@ const MenuList = () => {
         >
           お問い合わせ
         </a>
-        <Link href="/terms">
-          <a className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base">
-            プライバシーポリシー
-          </a>
+        <Link
+          href="/terms"
+          className="mb-1 block py-2 text-sm duration-300 hover:opacity-75 md:text-base"
+        >
+          プライバシーポリシー
         </Link>
       </li>
     </ol>

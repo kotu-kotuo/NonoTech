@@ -13,7 +13,7 @@ const NotFound = (props: any) => {
           お探しのページは見つかりませんでした
         </h1>
         <Image src="/nonotech-404.png" width={700} height={400} quality={100} />
-        <Link href={"/"}>
+        <Link href={"/"} legacyBehavior>
           <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
             ホームへ戻る
           </p>

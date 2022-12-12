@@ -37,14 +37,17 @@ const Article: NextPage<ArticleProps> = ({
       <div className="rounded bg-white py-8 md:my-8 md:px-10">
         {/* パンくずリスト */}
         <div className="mb-4 flex w-full items-center gap-x-1.5 text-[15px] text-secondary">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
               <HiHome className="mb-[0.8px]" />
               <p>Home</p>
             </div>
           </Link>
           <RiArrowDropRightLine className="-mx-1.5 text-xl text-[#55DDA6]" />
-          <Link href={`/category/${page.properties.category.select.name}`}>
+          <Link
+            href={`/category/${page.properties.category.select.name}`}
+            legacyBehavior
+          >
             <p className="cursor-pointer hover:opacity-80">
               {page.properties.category.select.name}
             </p>
@@ -104,7 +107,10 @@ const Article: NextPage<ArticleProps> = ({
         {/* 記事下のカテゴリー、タグ */}
         <p className="mt-4 font-bold text-gray-800">
           CATEGORY :{" "}
-          <Link href={`/category/${page.properties.category.select.name}`}>
+          <Link
+            href={`/category/${page.properties.category.select.name}`}
+            legacyBehavior
+          >
             <span className="cursor-pointer text-gray-400 hover:opacity-80">
               {page.properties.category.select.name}
             </span>
@@ -118,7 +124,7 @@ const Article: NextPage<ArticleProps> = ({
                 tag: { color: string; id: string; name: string },
                 index: Key
               ) => (
-                <Link href={`/tag/${tag.name}`} key={index}>
+                <Link href={`/tag/${tag.name}`} key={index} legacyBehavior>
                   <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80">
                     {tag.name}
                   </li>

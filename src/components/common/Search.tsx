@@ -24,7 +24,7 @@ const Search = () => {
           className="block w-full py-2  focus:outline-none"
         ></input>
       </div>
-      <Link href={`/search/${query}`}>
+      <Link href={`/search/${query}`} legacyBehavior>
         <div
           className="cursor-pointer
          rounded-r bg-primary p-2.5 text-2xl text-white shadow-sm transition hover:opacity-80"

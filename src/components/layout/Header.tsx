@@ -20,8 +20,8 @@ const Header = (props: { database: Database }): JSX.Element => {
     <header className="relative py-3">
       <Container className="flex items-center justify-between">
         {/* ロゴ */}
-        <Link href="/">
-          <a className="text-2xl font-bold text-gray-900">NonoTech</a>
+        <Link href="/" className="text-2xl font-bold text-gray-900">
+          NonoTech
         </Link>
 
         {/* ハンバーガーボタン */}

@@ -6,7 +6,10 @@ import { getCover, getDate, getText } from "@/lib/propaty";
 
 const Card: FC<CardProps> = ({ page }) => {
   return (
-    <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
+    <Link
+      href={`/articles/${getText(page.properties.slug.rich_text)}`}
+      legacyBehavior
+    >
       <div className="flex cursor-pointer gap-x-3 bg-white p-3 shadow-sm hover:opacity-80">
         <div className="min-w-[80px] max-w-[88px]">
           <Image
