@@ -11,7 +11,7 @@ import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
 import { RiArrowDropRightLine } from "react-icons/ri";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import dayjs from "dayjs";
 import Link from "next/link";
 import TwitterButton from "@/components/common/parts/TwitterButton";

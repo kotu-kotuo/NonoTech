@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { fetchDatabase, searchPages } from "@/lib/notion";
 import { IndexProps, Params } from "@/types/types";
 import { GetServerSideProps, NextPage } from "next";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
 

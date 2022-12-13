@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { fetchDatabase } from "@/lib/notion";
 import { GetStaticProps } from "next";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
 

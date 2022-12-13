@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { AiOutlineLink } from "react-icons/ai";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 
