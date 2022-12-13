@@ -16,22 +16,24 @@ const Search: NextPage<IndexProps> = ({ pages, database }) => {
             <div className="py-8 text-center text-3xl font-bold text-gray-600 ">
               記事が見つかりませんでした。。
             </div>
-            <div className="relative">
+            <div className="relative mx-auto w-fit">
               <Image
                 width={700}
                 height={400}
                 src="/sika.jpg"
-                objectFit="cover"
+                alt="articles not found"
+                className="aspect-video h-auto  object-cover"
+                priority
               />
               <p className="absolute top-2/3 right-0 w-1/3 text-left text-lg font-extralight text-white">
                 まじごめん
               </p>
+              <Link href={"/"} legacyBehavior>
+                <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
+                  ホームへ戻る
+                </p>
+              </Link>
             </div>
-            <Link href={"/"}>
-              <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
-                ホームへ戻る
-              </p>
-            </Link>
           </div>
         ) : (
           pages.map((page, index) => <Card key={index} page={page} />)

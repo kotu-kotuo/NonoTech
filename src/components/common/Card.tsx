@@ -6,20 +6,22 @@ import { getCover, getDate, getText } from "@/lib/propaty";
 
 const Card: FC<CardProps> = ({ page }) => {
   return (
-    <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
-      <div className="flex cursor-pointer gap-x-3 bg-white p-3 shadow-sm hover:opacity-80">
-        <div className="min-w-[80px] max-w-[88px]">
+    <Link
+      href={`/articles/${getText(page.properties.slug.rich_text)}`}
+      legacyBehavior
+    >
+      <div className="flex cursor-pointer gap-x-4 bg-white p-3 shadow-sm hover:opacity-80">
+        <div className="aspect-square max-h-[80px] min-w-[80px] max-w-[80px] md:max-h-[88px] md:min-w-[88px] md:max-w-[88px]">
           <Image
             width={100}
             height={100}
-            alt="記事の画像"
+            alt="featured image"
             src={
               getCover(page.cover)
                 ? getCover(page.cover)
                 : "https://source.unsplash.com/random"
             }
-            objectFit="cover"
-            className="static h-auto w-full"
+            className="static h-full w-full object-cover"
             quality={30}
           />
         </div>
