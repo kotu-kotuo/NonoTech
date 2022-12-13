@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ExtendedRecordMap } from "notion-types";
 import { FC } from "react";

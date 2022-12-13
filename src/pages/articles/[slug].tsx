@@ -11,7 +11,7 @@ import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
 import { RiArrowDropRightLine } from "react-icons/ri";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
 import TwitterButton from "@/components/common/parts/TwitterButton";
@@ -80,13 +80,13 @@ const Article: NextPage<ArticleProps> = ({
 
         {/* アイキャッチ */}
         <Image
-          className="static h-auto w-full"
+          className="static aspect-video h-auto w-full object-cover"
           src={getCover(page.cover)}
           alt="Featured Image"
-          objectFit="cover"
           width={700}
           height={400}
           quality={30}
+          priority
         />
 
         {/* 本文 */}

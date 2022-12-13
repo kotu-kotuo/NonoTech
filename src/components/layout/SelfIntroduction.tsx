@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { AiOutlineLink } from "react-icons/ai";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 
@@ -16,7 +16,7 @@ const SelfIntroduction = () => {
     <div className="rounded bg-white px-4 py-6">
       <div className="mb-4 flex items-center gap-x-4">
         <Image
-          className="rounded-full"
+          className="max-x-full h-auto rounded-full"
           width={60}
           height={60}
           src="/photo-with-kazu.png"
@@ -26,7 +26,8 @@ const SelfIntroduction = () => {
       </div>
       <div className="text-sm text-gray-700">
         React, TypeScript,
-        Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。このブログはNext.js & NotionAPIで作成しています。
+        Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。このブログはNext.js
+        & NotionAPIで作成しています。
       </div>
       <div className="mt-4 flex items-center justify-center gap-x-6 text-2xl text-gray-600">
         {IconLinks.map((IconLink) => (
