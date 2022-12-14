@@ -15,14 +15,16 @@ const Search = () => {
   return (
     <div className="flex justify-between rounded bg-white shadow-sm">
       <div className="my-auto ml-1 w-full hover:border-none focus:border-none">
-        <input
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setQuery(e.target.value)
-          }
-          onKeyDown={(e) => pressEnter(e)}
-          type="text"
-          className="block w-full py-2  focus:outline-none"
-        ></input>
+        <label>
+          <input
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setQuery(e.target.value)
+            }
+            onKeyDown={(e) => pressEnter(e)}
+            type="text"
+            className="block w-full py-2  focus:outline-none"
+          />
+        </label>
       </div>
       <Link href={`/search/${query}`} legacyBehavior>
         <div
