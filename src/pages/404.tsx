@@ -21,7 +21,7 @@ const NotFound = (props: any) => {
           alt="nonotech 404"
           priority
         />
-        <Link href={"/"} legacyBehavior>
+        <Link href={"/"}>
           <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
             ホームへ戻る
           </p>
