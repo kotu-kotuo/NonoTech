@@ -8,11 +8,11 @@ import { IndexProps, Params } from "@/types/types";
 const Tag: NextPage<IndexProps> = ({ pages, database }) => {
   return (
     <Layout path="/" title="NonoTech" database={database}>
-      <div className="mt-8 mb-12 space-y-5 md:mb-16">
+      <ul className="mt-8 mb-12 space-y-5 md:mb-16">
         {pages.map((page, index) => (
           <Card key={index} page={page} />
         ))}
-      </div>
+      </ul>
     </Layout>
   );
 };

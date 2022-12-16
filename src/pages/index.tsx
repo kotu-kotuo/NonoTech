@@ -13,11 +13,11 @@ const Home: NextPage<IndexProps> = ({ pages, database }) => {
       isTopPage={true}
       database={database}
     >
-      <div className="mt-8 mb-12 space-y-5 md:mb-16">
+      <ul className="mt-8 mb-12 space-y-5 md:mb-16">
         {pages.map((page, index) => (
           <Card key={index} page={page} />
         ))}
-      </div>
+      </ul>
     </Layout>
   );
 };

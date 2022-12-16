@@ -6,7 +6,7 @@ import { getCover, getDate, getText } from "@/lib/propaty";
 
 const Card: FC<CardProps> = ({ page }) => {
   return (
-    <div>
+    <li>
       <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
         <div className="flex cursor-pointer gap-x-4 bg-white p-3 shadow-sm hover:opacity-80">
           <div className="aspect-square max-h-[80px] min-w-[80px] max-w-[80px] md:max-h-[88px] md:min-w-[88px] md:max-w-[88px]">
@@ -38,7 +38,7 @@ const Card: FC<CardProps> = ({ page }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </li>
   );
 };
 

@@ -118,11 +118,11 @@ const Article: NextPage<ArticleProps> = ({
                 tag: { color: string; id: string; name: string },
                 index: Key
               ) => (
-                <Link href={`/tag/${tag.name}`} key={index}>
-                  <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80">
+                <li className="mb-3 mr-2 cursor-pointer rounded-xl bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-600 hover:opacity-80">
+                  <Link href={`/tag/${tag.name}`} key={index}>
                     {tag.name}
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               )
             )}
           </ul>
