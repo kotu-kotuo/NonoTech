@@ -17,7 +17,7 @@ const Footer = (): JSX.Element => {
             <MenuList />
           </nav>
         </div>
-        <small className="mt-10 block text-center text-gray-100">
+        <small className="mt-10 block text-center text-white">
           &copy; {new Date().getFullYear()} Nono
         </small>
       </Container>
