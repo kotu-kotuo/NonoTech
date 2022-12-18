@@ -48,14 +48,13 @@
 .notion-h2 {
   @apply mt-4 mb-4 text-[21px] font-bold leading-tight md:text-[23px] !important;
 }
-/* border-l-4 border-primary pl-2  */
 
 .notion-h3 {
   @apply mt-0 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
 }
 
 .notion-text {
-  @apply m-0 mb-6 p-0 text-base leading-loose text-[#333333] md:text-[17px] !important;
+  @apply m-0 mb-6 p-0 text-base leading-loose text-[#2e2e2e] md:text-[17px] !important;
 }
 
 .notion-list {
@@ -88,7 +87,7 @@
 
 .notion-inline-code {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
-  @apply bg-stone-100 px-[0.3rem] py-[0.15rem] text-red-700 !important;
+  @apply bg-neutral-200 bg-opacity-70 px-[0.3rem] py-[0.15rem] text-[#2e2e2e] !important;
 }
 
 .notion-asset-wrapper {
