@@ -62,6 +62,14 @@
   @apply -mt-2 mb-2 !important;
 }
 
+.notion-toggle {
+  @apply max-w-full p-0 !important;
+}
+
+.notion-toggle > div {
+  @apply mx-0 px-4 !important;
+}
+
 .notion-quote {
   @apply mb-7 mt-2 border-l-4 border-solid border-gray-600 py-1.5 px-3 text-base italic text-gray-600 !important;
 }
@@ -76,6 +84,11 @@
 
 .notion-code {
   @apply mb-8 mt-0 rounded py-[1.1rem] !important;
+}
+
+.notion-inline-code {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+  @apply bg-stone-100 px-[0.3rem] py-[0.15rem] text-red-700 !important;
 }
 
 .notion-asset-wrapper {
