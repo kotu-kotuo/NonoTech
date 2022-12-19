@@ -103,7 +103,7 @@
 }
 
 .notion-link {
-  @apply cursor-pointer break-words border-b border-primary align-text-bottom leading-[1.1] text-primary opacity-100 transition-colors duration-200 hover:border-b-primary hover:text-primary !important;
+  @apply cursor-pointer break-words border-b border-primary align-text-bottom leading-[1.1] text-primary opacity-100 transition-colors duration-200 hover:border-opacity-80 hover:opacity-80 !important;
 }
 
 .notion-row {
@@ -113,6 +113,10 @@
 .notion-external-block,
 .notion-bookmark {
   @apply -mt-3 mb-12 !important;
+}
+
+.notion-bookmark {
+  @apply transition hover:bg-neutral-100 !important;
 }
 
 .notion-bookmark > div:first-child {
