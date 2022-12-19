@@ -50,7 +50,7 @@
 }
 
 .notion-h3 {
-  @apply mt-0 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-secondary before:content-["◆"] !important;
+  @apply mt-0 mb-3 ml-4 text-[18px] font-bold leading-relaxed before:absolute before:top-[0.4rem] before:-left-4 before:mr-2 before:inline-block before:w-4 before:text-xs before:text-[#0CC177] before:content-["◆"] !important;
 }
 
 .notion-text {
@@ -103,7 +103,7 @@
 }
 
 .notion-link {
-  @apply cursor-pointer break-words border-b border-[#0BB864] align-text-bottom leading-[1.1] text-[#0BB864] opacity-100 transition-colors duration-200 hover:border-b-primary hover:text-primary !important;
+  @apply cursor-pointer break-words border-b border-primary align-text-bottom leading-[1.1] text-primary opacity-100 transition-colors duration-200 hover:border-b-primary hover:text-primary !important;
 }
 
 .notion-row {

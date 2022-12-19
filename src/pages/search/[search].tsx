@@ -13,7 +13,7 @@ const Search: NextPage<IndexProps> = ({ pages, database }) => {
       <div className="mt-8 mb-12 space-y-5 md:mb-16">
         {pages.length === 0 ? (
           <div>
-            <div className="py-8 text-center text-3xl font-bold text-gray-600 ">
+            <div className="py-8 text-center text-3xl font-bold text-gray-600">
               記事が見つかりませんでした。。
             </div>
             <div className="relative mx-auto w-fit">
@@ -29,7 +29,7 @@ const Search: NextPage<IndexProps> = ({ pages, database }) => {
                 まじごめん
               </p>
               <Link href={"/"}>
-                <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
+                <p className="mt-6 inline-block cursor-pointer border-b border-primary leading-tight text-primary transition-colors duration-200 hover:border-opacity-80 hover:opacity-80">
                   ホームへ戻る
                 </p>
               </Link>

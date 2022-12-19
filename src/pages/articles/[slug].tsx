@@ -36,14 +36,14 @@ const Article: NextPage<ArticleProps> = ({
     >
       <div className="rounded bg-white py-8 md:my-8 md:px-10">
         {/* パンくずリスト */}
-        <div className="mb-4 flex w-full items-center gap-x-1.5 text-[15px] text-secondary">
+        <div className="mb-4 flex w-full items-center gap-x-1.5 text-[15px] text-primary">
           <Link href="/">
             <div className="flex cursor-pointer items-center gap-x-0.5 hover:opacity-80">
               <HiHome className="mb-[0.8px]" />
               <p>Home</p>
             </div>
           </Link>
-          <RiArrowDropRightLine className="-mx-1.5 text-xl text-[#55DDA6]" />
+          <RiArrowDropRightLine className="-mx-1.5 text-xl text-primary opacity-70" />
           <Link href={`/category/${page.properties.category.select.name}`}>
             <p className="cursor-pointer hover:opacity-80">
               {page.properties.category.select.name}
@@ -58,7 +58,7 @@ const Article: NextPage<ArticleProps> = ({
 
         <div className="my-4 flex items-center justify-between">
           {/* 日付 */}
-          <div className="flex items-center gap-x-0.5 text-gray-400">
+          <div className="flex items-center gap-x-0.5 text-gray-500">
             <HiOutlineRefresh />
             <p className="text-sm">
               {dayjs(page.properties.updatedAt.last_edited_time).format(
@@ -105,7 +105,7 @@ const Article: NextPage<ArticleProps> = ({
         <p className="mt-4 font-bold text-gray-800">
           CATEGORY :{" "}
           <Link href={`/category/${page.properties.category.select.name}`}>
-            <span className="cursor-pointer text-gray-400 hover:opacity-80">
+            <span className="cursor-pointer text-gray-500 hover:opacity-80">
               {page.properties.category.select.name}
             </span>
           </Link>

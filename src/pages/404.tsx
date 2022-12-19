@@ -22,7 +22,7 @@ const NotFound = (props: any) => {
           priority
         />
         <Link href={"/"}>
-          <p className="mt-6 inline-block cursor-pointer border-b border-secondary leading-tight text-secondary transition-colors duration-200 hover:border-b-primary hover:text-primary">
+          <p className="mt-6 inline-block cursor-pointer border-b border-primary leading-tight text-primary transition-colors duration-200 hover:border-b-primary hover:opacity-80">
             ホームへ戻る
           </p>
         </Link>
