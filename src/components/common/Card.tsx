@@ -27,8 +27,8 @@ const Card: FC<CardProps> = ({ page }) => {
             <div className="mb-2 text-base font-bold text-gray-800 md:text-xl">
               {getText(page.properties.title.title)}
             </div>
-            <div>
-              <div className="mb-2 text-sm text-gray-500">
+            <div className="mt-3 flex flex-row-reverse items-center justify-between sm:mt-0 sm:block">
+              <div className="text-sm text-gray-500 sm:mb-2">
                 {getDate(page.properties.publishedAt.date)}
               </div>
               <div className="w-fit rounded bg-primary px-2 py-1 text-xs font-bold text-white">
