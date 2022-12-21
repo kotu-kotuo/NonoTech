@@ -84,7 +84,7 @@ const Article: NextPage<ArticleProps> = ({
           alt="Featured Image"
           width={700}
           height={400}
-          quality={30}
+          quality={1}
           placeholder="blur"
           blurDataURL={blurDataURL}
           priority
