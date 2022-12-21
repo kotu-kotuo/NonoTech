@@ -35,6 +35,7 @@ export type ArticleProps = {
   database: any;
   recordMap: ExtendedRecordMap;
   metaDescription: string;
+  blurDataURL: string;
 };
 
 export type IndexProps = {

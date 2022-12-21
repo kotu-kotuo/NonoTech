@@ -6,7 +6,7 @@ import {
   getPage,
 } from "@/lib/notion";
 import { GetServerSideProps, NextPage } from "next";
-import React, { Key } from "react";
+import { Key } from "react";
 import { ArticleProps } from "@/types/types";
 import { getCover, getText } from "@/lib/propaty";
 import { HiHome, HiOutlineRefresh } from "react-icons/hi";
@@ -19,12 +19,14 @@ import FacebookButton from "@/components/common/parts/FacebookButton";
 import HatenaButton from "@/components/common/parts/HatenaButton";
 import NotionPage from "@/components/articles/NotionPage";
 import { BlockType } from "notion-block-renderer";
+import { getPlaiceholder } from "plaiceholder";
 
 const Article: NextPage<ArticleProps> = ({
   page,
   database,
   recordMap,
   metaDescription,
+  blurDataURL,
 }) => {
   return (
     <Layout
@@ -83,6 +85,8 @@ const Article: NextPage<ArticleProps> = ({
           width={700}
           height={400}
           quality={30}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
           priority
         />
 
@@ -143,7 +147,7 @@ export const getServerSideProps: GetServerSideProps<
   }
 
   const { results } = await fetchPages({ slug: ctx.params.slug });
-  const page = results[0];
+  const page: any = results[0];
   const pageId = page.id;
   const database = await fetchDatabase();
   const recordMap = await getPage(pageId);
@@ -170,13 +174,16 @@ export const getServerSideProps: GetServerSideProps<
       .join("")
       .replace(/^こんにちは、ノノです。/, "")
       .substring(0, 150) + "...";
-
+  const { base64 } = await getPlaiceholder(getCover(page.cover), {
+    size: 10,
+  });
   return {
     props: {
       page: page,
       database: database,
       recordMap: recordMap,
       metaDescription: metaDescription,
+      blurDataURL: base64,
     },
   };
 };
