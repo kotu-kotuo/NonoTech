@@ -1,12 +1,22 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { ExtendedRecordMap } from "notion-types";
-import { FC } from "react";
-import { NotionRenderer } from "react-notion-x";
+import {
+  CodeBlock,
+  CollectionViewBlock,
+  CollectionViewPageBlock,
+  ExtendedRecordMap,
+  PageBlock,
+} from "notion-types";
+import { ComponentType, FC } from "react";
+import { NotionContext, NotionRenderer } from "react-notion-x";
 import TweetEmbed from "react-tweet-embed";
 
-const Code: any = dynamic<any>(() =>
+const Code: ComponentType<{
+  block: CodeBlock;
+  defaultLanguage?: string | undefined;
+  className?: string | undefined;
+}> = dynamic(() =>
   import("react-notion-x/build/third-party/code").then(async (m) => {
     // additional prism syntaxes
     await Promise.all([
@@ -46,7 +56,11 @@ const Code: any = dynamic<any>(() =>
   })
 );
 
-const Collection = dynamic(() =>
+const Collection: ComponentType<{
+  block: PageBlock | CollectionViewBlock | CollectionViewPageBlock;
+  className?: string | undefined;
+  ctx: NotionContext;
+}> = dynamic(() =>
   import("react-notion-x/build/third-party/collection").then(
     (m) => m.Collection
   )
