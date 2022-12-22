@@ -14,7 +14,8 @@
 
 .notion-header,
 .notion-page-cover-wrapper,
-.notion-title {
+.notion-title,
+.notion-collection-page-properties {
   display: none !important;
 }
 

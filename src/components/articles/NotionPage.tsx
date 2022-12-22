@@ -46,6 +46,12 @@ const Code: any = dynamic<any>(() =>
   })
 );
 
+const Collection = dynamic(() =>
+  import("react-notion-x/build/third-party/collection").then(
+    (m) => m.Collection
+  )
+);
+
 const Tweet = ({ id }: { id: string }) => {
   return <TweetEmbed tweetId={id} />;
 };
@@ -61,7 +67,13 @@ const NotionPage: FC<NotionPageProps> = (props) => {
         recordMap={props.recordMap}
         fullPage={true}
         darkMode={false}
-        components={{ nextImage: Image, nextLink: Link, Code, Tweet }}
+        components={{
+          nextImage: Image,
+          nextLink: Link,
+          Code,
+          Collection,
+          Tweet,
+        }}
       />
     </div>
   );
