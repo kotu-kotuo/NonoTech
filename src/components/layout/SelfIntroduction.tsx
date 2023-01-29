@@ -19,15 +19,15 @@ const SelfIntroduction = () => {
           className="max-x-full h-auto rounded-full"
           width={60}
           height={60}
-          src="/photo-with-kazu.png"
+          src="/icon-2023-marine.png"
           alt="my photo"
         />
         <div className="text-lg font-bold text-gray-700">ノノ</div>
       </div>
       <div className="text-sm text-gray-700">
-        React, TypeScript,
-        Next.jsなどを独学しています。フロントエンドエンジニアを目指して就活中。このブログはNext.js
-        & NotionAPIで作成しています。
+        2023/1~エンジニアデビュー　業務でVue
+        趣味でReact　引きこもるのが好き　このブログはNext.js &
+        NotionAPIで作成しています
       </div>
       <div className="mt-4 flex items-center justify-center gap-x-6 text-2xl text-gray-600">
         {IconLinks.map((IconLink) => (
